@@ -1,0 +1,37 @@
+{
+    "name": "jane_tonic",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "jane_tonic_container",
+    "postCreateCommand": "bash .devcontainer/init.sh",
+    "workspaceFolder": "/jane_tonic",
+    // "customizations": {
+    //   "vscode": {
+    //     "extensions": [
+    //       "fudge.auto-using",
+    //       "gruntfuggly.todo-tree",
+    //       "sibiraj-s.vscode-scss-formatter",
+    //       "firefox-devtools.vscode-firefox-debug",
+    //       // "msjsdiag.debugger-for-chrome",
+    //       "prisma.prisma",
+    //       "dbaeumer.vscode-eslint",
+    //       "mhutchie.git-graph",
+    //       "mechatroner.rainbow-csv",
+    //       "stylelint.vscode-stylelint",
+    //       "pflannery.vscode-versionlens",
+    //       "davidanson.vscode-markdownlint",
+    //       "esbenp.prettier-vscode",
+    //       "webben.browserslist",
+    //       "ms-azuretools.vscode-docker"
+    //     ],
+    //     "settings": {
+    //       // "editor.rulers": [
+    //       //   80
+    //       // ],
+    //       // "workbench.colorCustomizations": {
+    //       //   "editorRuler.foreground": "#fff8fa"
+    //       // }
+    //     }
+    //   }
+    // }
+  }
+  
