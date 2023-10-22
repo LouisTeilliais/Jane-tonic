@@ -1,23 +1,6 @@
 version: '3'
 
 services:
-  # jane_tonic_container:
-  #   build: 
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   stdin_open: true
-  #   tty: true
-  #   volumes:
-  #     - ../:/jane_tonic:rw
-  #     - ~/.ssh:/.ssh
-  #     - /etc/timezone:/etc/timezone:ro
-  #     - /etc/localtime:/etc/localtime:ro
-  #   ports:
-  #     - '5001:5000'
-  #     - '3000:3000'
-  #   networks:
-  #     - jane_tonic_network
-
   db: 
     image: postgres:latest
     environment:
