@@ -2,6 +2,7 @@ import './App.css'
 import './assets/fonts/TRBalloon.ttf'
 import Course from './components/Course/Course'
 import Separation from './components/Separtion/Separation'
+import Tarifs from './components/Tarifs/Tarifs'
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
       <Separation
         title="Tarifs"
       ></Separation>
+      <Tarifs></Tarifs>
       {/* TODO image ou component Tarifs */}
       <Separation
         title="La Coach"
