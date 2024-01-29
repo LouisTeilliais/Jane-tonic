@@ -1,0 +1,109 @@
+.bloc-tarifs{
+    font-family: 'Light';
+    margin-bottom: 3%;
+}
+
+/* COURS COLLECTIF 1h */
+.cours-collec-1h {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    margin-top: 2%;
+}   
+
+.cours-collec-1h .titre, .cours-collec-1h #titre-circuit, .cours-collec-1h #titre-pilates {
+    text-align: center;
+    font-weight: bold;
+}
+
+.cours-collec-1h #liste-prix-séances-circuit, .cours-collec-1h #liste-prix-séances-pilates {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0
+}
+
+.cours-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit, .cours-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates {
+    margin: 0;
+    padding: 10px;
+    background-color: lightgray;
+    color: black;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    list-style: none;
+    width: 50%;
+}
+
+.cours-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit span, .cours-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates span {
+    display: inline-block;
+    text-align: left; /* Aligner le texte des séances à gauche */
+    margin-right: 40%; /* Décaler le texte des séances vers la gauche */
+}
+
+.cours-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit strong, .cours-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates strong{
+    display: inline-block;
+    text-align: right; /* Aligner le texte des prix à droite */
+    margin-left: 40%; /* Décaler le texte des prix vers la droite */
+}
+
+
+/* COURS PARTICULIER 1h */
+.cours-partic-dom-1h {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    margin-top: 2%;
+}
+
+.cours-partic-dom-1h .titre, .cours-partic-dom-1h #titre-circuit{
+    text-align: center;
+    font-weight: bold;
+}
+
+.cours-partic-dom-1h #liste-prix-séances {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0
+}
+
+.cours-partic-dom-1h #liste-prix-séances #titre{
+    margin: 0;
+    padding: 10px;
+}
+
+.cours-partic-dom-1h #liste-prix-séances #prix-séance-domicile{
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    list-style: none;
+    width: 50%;
+}
+
+.cours-partic-dom-1h #liste-prix-séances #prix-séance-domicile span{
+    display: inline-block;
+    text-align: right; /* Aligner le texte des prix à droite */
+    margin-right: 39%; /* Décaler le texte des prix vers la droite */
+}
+
+.cours-partic-dom-1h #liste-prix-séances #prix-séance-domicile strong{
+    display: inline-block;
+    text-align: right; /* Aligner le texte des prix à droite */
+    margin-left: 39%; /* Décaler le texte des prix vers la droite */
+}
+
+#reglement-domicile {
+    text-align: center;
+    font-size: 0.8em;
+    width: 30%;
+    margin: 0 auto;
+}
