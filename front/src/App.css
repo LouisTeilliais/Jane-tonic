@@ -1,18 +1,1 @@
-/* @font-face {
-  font-family: "Medium";  
-  src: local("TRBalloon"),
-    url("src/assets/fonts/TRBalloon.ttf") format("truetype");
-} */
-
-.body {
-  background-color: #fefefe;
-}
-
-.container-top-image {
-  display: flex;
-  justify-content: center;
-}
-.top-image{
-  height: 18rem;
-}
 
