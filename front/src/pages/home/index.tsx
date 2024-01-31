@@ -1,8 +1,8 @@
 import './index.css'
 import '../../assets/fonts/TRBalloon.ttf'
-import Tarifs from '../../components/Tarifs/prices'
-import Separation from '../../components/Separtion/Separation'
-import Course from '../../components/Course/Course'
+import Tarifs from '../../components/tarifs/prices'
+import Separation from '../../components/separtion/separation'
+import Course from '../../components/course/course'
 
 export default function Index() {
 
