@@ -1,10 +1,10 @@
-import './AppView.css'
+import './index.css'
 import '../../assets/fonts/TRBalloon.ttf'
-import Course from '../../components/Course/Course'
+import Tarifs from '../../components/Tarifs/prices'
 import Separation from '../../components/Separtion/Separation'
-import Tarifs from '../Tarifs/Tarifs'
+import Course from '../../components/Course/Course'
 
-export default function AppView() {
+export default function Index() {
 
   return (
     <>

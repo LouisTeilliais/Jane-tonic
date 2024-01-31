@@ -1,8 +1,8 @@
 import './App.css'
 import './assets/fonts/TRBalloon.ttf'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LoginAdmin from '../auth/pages/Login'
-import AppView from './Pages/AppView/AppView';
+import Index from './pages/home';
+import Login from './pages/login';
 
 function App() {
 
@@ -10,8 +10,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<AppView/>}/>
-          <Route path="/admin" element={<LoginAdmin/>}/>
+          <Route path="/" element={<Index/>}/>
+          <Route path="/admin" element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </>

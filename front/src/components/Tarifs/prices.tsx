@@ -1,4 +1,4 @@
-import './Tarifs.css';
+import './prices.css';
 
 export default function Tarifs() {
     return (

@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import './Course.css'
+import './course.css'
 
 
 

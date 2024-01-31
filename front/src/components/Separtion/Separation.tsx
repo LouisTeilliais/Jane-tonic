@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import './Separation.css'
+import './separation.css'
 
 export interface SeparationProps {
     title: string
