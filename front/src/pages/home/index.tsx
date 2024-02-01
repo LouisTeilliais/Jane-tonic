@@ -3,12 +3,15 @@ import '../../assets/fonts/TRBalloon.ttf'
 import Tarifs from '../../components/tarifs/prices'
 import Separation from '../../components/separtion/separation'
 import Course from '../../components/course/course'
+import Coach from '../../components/coach/coach'
+import Footer from '../../components/footer/footer'
+import Navbar from '../../components/navbar/navbar'
 
 export default function Index() {
 
   return (
     <>
-      {/* TODO Navbar */}
+      <Navbar></Navbar>
       <div
         className='container-top-image'
       >
@@ -18,10 +21,12 @@ export default function Index() {
         ></img>
       </div>
       <Separation
+        id='agenda'
         title="L'agenda"
       ></Separation>
       {/* TODO component Agenda to dev */}
       <Separation
+        id='course'
         title="Les cours"
       ></Separation>
       <Course
@@ -29,8 +34,8 @@ export default function Index() {
         title='Pilates'
         text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
       ></Course>
-      <Course
-        src='src/assets/courses/circuit-training.svg'
+       <Course
+        src='src/assets/courses/pilates.svg'
         title='Circuit training'
         text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
       ></Course>
@@ -40,14 +45,16 @@ export default function Index() {
         text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
       ></Course>
       <Separation
+        id='tarifs'
         title="Tarifs"
       ></Separation>
       <Tarifs></Tarifs>
-      {/* TODO image ou component Tarifs */}
       <Separation
+        id='coach'
         title="La Coach"
       ></Separation>
-      {/* TODO image ou component La Coach */}
+      <Coach></Coach>
+      <Footer></Footer>
     </>
   )
 }

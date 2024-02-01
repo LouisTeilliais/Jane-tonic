@@ -17,9 +17,7 @@
 
 .course-container {
  display: flex;
- align-items: center;
  justify-content: center;
-/* width: 30%; */
 }
 
 .text-container {
@@ -28,7 +26,8 @@
 
 .course-title{
  font-family: 'Italic';
- margin-bottom: -1rem;
+ margin-bottom: -0.5rem;
+ margin-top: 0;
 }
 
 .course-text{
