@@ -6,29 +6,29 @@ export default function Navbar() : ReactElement {
         <div className="navbar-container">
             <div className="button-container">
                 <a href="#agenda">
-                    L'agenda
+                    L'AGENDA
                 </a>
                 <a href="#course">
-                    Les cours
+                    LES COURS
                 </a>
                 <a href="#tarifs">
-                    Tarifs
+                    TARIFS
                 </a>
                 <a href="#coach">
-                    La coach
+                    LA COACH
                 </a>
                 <a href="#contact">
-                    Contact
+                    CONTACT
                 </a>
             </div>
-            <div className="logo-container">
+            {/* <div className="logo-container">
                 <a>
                     <img src="src/assets/fb.svg" alt="" />
                 </a>
                 <a>
                     <img src="src/assets/insta.svg" alt="" />
                 </a>
-            </div>
+            </div> */}
         </div>
     )
 }

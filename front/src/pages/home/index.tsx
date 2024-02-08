@@ -1,11 +1,12 @@
 import './index.css'
 import '../../assets/fonts/TRBalloon.ttf'
-import Tarifs from '../../components/tarifs/prices'
-import Separation from '../../components/separtion/separation'
-import Course from '../../components/course/course'
-import Coach from '../../components/coach/coach'
-import Footer from '../../components/footer/footer'
-import Navbar from '../../components/navbar/navbar'
+import Navbar from '../../components/element/navbar/navbar'
+import Separation from '../../components/containers/separtion/separation'
+import Diary from '../../components/containers/diary/diary'
+import Course from '../../components/containers/course/course'
+import Tarifs from '../../components/containers/tarifs/prices'
+import Footer from '../../components/element/footer/footer'
+import Coach from '../../components/containers/coach/coach'
 
 export default function Index() {
 
@@ -25,6 +26,7 @@ export default function Index() {
         title="L'agenda"
       ></Separation>
       {/* TODO component Agenda to dev */}
+      <Diary></Diary>
       <Separation
         id='course'
         title="Les cours"
