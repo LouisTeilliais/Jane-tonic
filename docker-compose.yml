@@ -1,13 +1,18 @@
-version: '3'
+version: "3"
 
 services:
-  db: 
+  db:
+    container_name: postgres_db
     image: postgres:latest
+    restart: always
     environment:
-      POSTGRES_USER: sa
-      POSTGRES_PASSWORD: Your_password123
+      POSTGRES_DB: jane-tonic
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./migrations:/docker-entrypoint-initdb.d
     ports:
-      - '5432:5432'
+      - "5432:5432"
     networks:
       - jane_tonic_network
 
