@@ -1,19 +1,30 @@
+
 export default function Login() {
     return (
-        <div>
-            <h1>Login admin</h1>
-            <form>
-                <label>
-                    <p>Username</p>
-                    <input type="text"></input>
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password"></input>
-                </label>
-            </form>
-            <div>
-                <button type="submit">Submit</button>
+        <div className='layout-public'>
+            <div className='top-area' />
+            <div className='bottom-area' />
+            <div className='left-area' />
+            <div className='right-area' />
+            <div className='main-area'>
+                hello
+                {/* <Card className="has-text-centered">
+                    <img
+                        src={LogoImage}
+                        alt="Business App Template"
+                    />
+                    <br />
+                    <Text
+                        size={700}
+                        align="center"
+                        weight="medium"
+                        block
+                    >
+                        Business App Template
+                    </Text>
+                    <br />
+                    <Outlet />
+                </Card> */}
             </div>
         </div>
     )
