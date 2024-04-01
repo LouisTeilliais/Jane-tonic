@@ -12,8 +12,10 @@ export class CreateUserDto {
     
     @IsNotEmpty()
     @ApiProperty() name: string;
+
     @IsNotEmpty()
     @ApiProperty() surname: string;
+    
     @IsNotEmpty()
     @ApiProperty() email: string;
 
@@ -24,9 +26,9 @@ export class CreateUserDto {
 export class UpdatePasswordDto {
 
     @IsNotEmpty()
-    @ApiProperty() new_password: string;
+    @ApiProperty() newPassword: string;
 
     @IsNotEmpty()
-    @ApiProperty() old_password: string;
+    @ApiProperty() oldPassword: string;
 
 }

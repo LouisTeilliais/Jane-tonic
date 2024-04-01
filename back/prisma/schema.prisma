@@ -11,14 +11,14 @@ datasource db {
 }
 
 model Sessions {
-  id                 Int      @id @default(autoincrement())
+  sessionId                 Int      @id @default(autoincrement())
   place              String   @map("place")
   level              String   @map("level")
   type               String   @map("type")
   date               DateTime @map("date")
   hour               String   @map("hour")
   numberUserMax      Int      @map("number_user_max")
-  numberUserReserved Int      @map("number_user_reserved")
+  numberUserReserved Int      @default(0) @map("number_user_reserved")
   isFull             Boolean  @default(false) @map("isFull")
 
   createdAt DateTime @default(now())

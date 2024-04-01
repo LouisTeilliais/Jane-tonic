@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { UsersModule } from './users/users.module';
+import SessionModule from './sessions/sesssion.module';
 
 
 @Module({
@@ -11,7 +12,9 @@ import { UsersModule } from './users/users.module';
     envFilePath: '.env'
   }),
     AuthenticationModule,
-    UsersModule],
+    UsersModule,
+    SessionModule,
+  ],
   controllers: [],
   providers: [],
 })

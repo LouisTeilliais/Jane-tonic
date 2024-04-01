@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const authentication_module_1 = require("./authentication/authentication.module");
 const users_module_1 = require("./users/users.module");
+const sesssion_module_1 = require("./sessions/sesssion.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -22,7 +23,8 @@ exports.AppModule = AppModule = __decorate([
                 envFilePath: '.env'
             }),
             authentication_module_1.AuthenticationModule,
-            users_module_1.UsersModule
+            users_module_1.UsersModule,
+            sesssion_module_1.default,
         ],
         controllers: [],
         providers: [],

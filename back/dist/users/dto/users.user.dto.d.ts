@@ -9,6 +9,6 @@ export declare class CreateUserDto {
     password: string;
 }
 export declare class UpdatePasswordDto {
-    new_password: string;
-    old_password: string;
+    newPassword: string;
+    oldPassword: string;
 }

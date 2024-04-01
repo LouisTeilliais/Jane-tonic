@@ -46,7 +46,7 @@ __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, swagger_1.ApiSecurity)('access-key'),
     (0, common_1.UseInterceptors)(common_1.ClassSerializerInterceptor),
-    (0, common_1.Put)('update/password'),
+    (0, common_1.Put)('update-password'),
     __param(0, (0, common_1.Request)()),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),

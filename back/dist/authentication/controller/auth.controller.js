@@ -45,7 +45,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AuthenticationController.prototype, "login", null);
 exports.AuthenticationController = AuthenticationController = __decorate([
-    (0, swagger_1.ApiTags)('auth'),
+    (0, swagger_1.ApiTags)('Authentication'),
     (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [authentication_service_1.AuthenticationService])
 ], AuthenticationController);

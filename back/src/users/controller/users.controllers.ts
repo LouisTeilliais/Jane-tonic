@@ -28,10 +28,11 @@ export class UsersController {
     // public async me(@Request() req) {
     //     return new RenderUser(req.user);
     // }
+
     @UseGuards(JwtAuthGuard)
     @ApiSecurity('access-key')
     @UseInterceptors(ClassSerializerInterceptor)
-    @Put('update/password')
+    @Put('update-password')
     public async updatePassword(@Request() req, @Body() 
                    updatePasswordDto: UpdatePasswordDto) {
         await this.usersService

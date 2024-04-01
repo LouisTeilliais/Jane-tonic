@@ -26,7 +26,7 @@ export class UsersService {
                 HttpStatus.UNAUTHORIZED);
         }
         // compare passwords
-        const areEqual = await compare(payload.old_password,
+        const areEqual = await compare(payload.oldPassword,
                                   user.password);
         if (!areEqual) {
             throw new HttpException("invalid_credentials", 
@@ -34,7 +34,7 @@ export class UsersService {
         }
         return await this.prisma.user.update({
             where: {id},
-            data: {password:  await hash(payload.new_password, 10)}
+            data: {password:  await hash(payload.newPassword, 10)}
         });
     }
 //use by auth module to register user in database

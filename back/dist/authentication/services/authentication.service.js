@@ -48,7 +48,7 @@ let AuthenticationService = class AuthenticationService {
         const user = { login };
         const token = this.jwtService.sign(user);
         return {
-            access_token: token,
+            accessToken: token,
         };
     }
     validateUser(payload) {

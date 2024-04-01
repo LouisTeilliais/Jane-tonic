@@ -45,13 +45,13 @@ let UsersService = class UsersService {
             if (!user) {
                 throw new common_1.HttpException("invalid_credentials", common_1.HttpStatus.UNAUTHORIZED);
             }
-            const areEqual = yield (0, bcrypt_1.compare)(payload.old_password, user.password);
+            const areEqual = yield (0, bcrypt_1.compare)(payload.oldPassword, user.password);
             if (!areEqual) {
                 throw new common_1.HttpException("invalid_credentials", common_1.HttpStatus.UNAUTHORIZED);
             }
             return yield this.prisma.user.update({
                 where: { id },
-                data: { password: yield (0, bcrypt_1.hash)(payload.new_password, 10) }
+                data: { password: yield (0, bcrypt_1.hash)(payload.newPassword, 10) }
             });
         });
     }

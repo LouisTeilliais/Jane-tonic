@@ -55,10 +55,10 @@ __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
-], UpdatePasswordDto.prototype, "new_password", void 0);
+], UpdatePasswordDto.prototype, "newPassword", void 0);
 __decorate([
     (0, class_validator_1.IsNotEmpty)(),
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
-], UpdatePasswordDto.prototype, "old_password", void 0);
+], UpdatePasswordDto.prototype, "oldPassword", void 0);
 //# sourceMappingURL=users.user.dto.js.map

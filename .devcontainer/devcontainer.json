@@ -1,7 +1,7 @@
 {
     "name": "app_jane_tonic",
     "dockerComposeFile": "docker-compose.yml",
-    "service": "app_interne_cadeau_client_container",
+    "service": "app_jane_tonic",
     "workspaceFolder": "/app_jane_tonic"
     // "postCreateCommand": "bash .devcontainer/init.sh"
 }

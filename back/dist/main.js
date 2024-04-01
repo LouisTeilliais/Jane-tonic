@@ -19,10 +19,11 @@ function bootstrap() {
             .setTitle('Jane Tonic')
             .setDescription('The Jane Tonic API description')
             .setVersion('1.0')
-            .addTag('api')
+            .addTag('Api')
             .build();
         const document = swagger_1.SwaggerModule.createDocument(app, config);
-        swagger_1.SwaggerModule.setup('api', app, document);
+        swagger_1.SwaggerModule.setup('Api', app, document);
+        app.setGlobalPrefix('api');
         yield app.listen(process.env.APP_PORT);
     });
 }
