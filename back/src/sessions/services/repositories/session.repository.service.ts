@@ -36,4 +36,43 @@ export default class SessionRepositoryService {
             } 
         })
     }
+
+    public async updateSession(
+        sessionId: SessionEntity['sessionId'],
+        sessionData : Pick<SessionEntity, 'place' | 'level' | 'hour' | 'type' | 'date' | 'numberUserMax'> 
+    )  : Promise<SessionEntity> {
+        const session = await this.findById(sessionId)
+
+        if (!session) {
+            return null
+        }
+
+        return this.prismaService.sessions.update({
+            where: {
+                sessionId
+            },  
+            data: {
+                place: sessionData.place,
+                level: sessionData.level,
+                hour: sessionData.hour,
+                type: sessionData.type,
+                date: sessionData.date,
+                numberUserMax: sessionData.numberUserMax,
+            } 
+        })
+    }
+
+    public async deleteSession(sessionId: SessionEntity['sessionId']) : Promise<SessionEntity> {
+        const session = await this.findById(sessionId)
+
+        if (!session) {
+            return null
+        }
+
+        return this.prismaService.sessions.delete({
+            where: {
+                sessionId
+            }
+        })
+    }
 }

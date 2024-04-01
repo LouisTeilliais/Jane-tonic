@@ -43,6 +43,12 @@ let SessionController = class SessionController {
     postProject(sessionDto) {
         return this.sessionControllerService.createSession(sessionDto);
     }
+    updateSession(sessionDto, sessionId) {
+        return this.sessionControllerService.updateSession(sessionId, sessionDto);
+    }
+    deleteSession(sessionId) {
+        return this.sessionControllerService.deleteSession(sessionId);
+    }
 };
 exports.SessionController = SessionController;
 __decorate([
@@ -60,12 +66,26 @@ __decorate([
 ], SessionController.prototype, "getOneSession", null);
 __decorate([
     (0, common_1.Post)(),
-    (0, swagger_1.ApiBearerAuth)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [session_dto_1.SessionDto]),
     __metadata("design:returntype", void 0)
 ], SessionController.prototype, "postProject", null);
+__decorate([
+    (0, common_1.Put)(":sessionId"),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Param)('sessionId', common_1.ParseIntPipe, new common_1.DefaultValuePipe('0'))),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [session_dto_1.SessionDto, Number]),
+    __metadata("design:returntype", void 0)
+], SessionController.prototype, "updateSession", null);
+__decorate([
+    (0, common_1.Delete)(':sessionId'),
+    __param(0, (0, common_1.Param)('sessionId', common_1.ParseIntPipe, new common_1.DefaultValuePipe('0'))),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], SessionController.prototype, "deleteSession", null);
 exports.SessionController = SessionController = __decorate([
     (0, swagger_1.ApiTags)('Sessions'),
     (0, common_1.Controller)('sessions'),

@@ -48,6 +48,31 @@ let SessionControllerService = class SessionControllerService {
             });
         });
     }
+    updateSession(sessionId, sessionDto) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const session = yield this.sessionRepositoryService.findById(sessionId);
+            if (!session) {
+                throw new common_1.NotFoundException("La session n'a pas été trouvé");
+            }
+            return this.sessionRepositoryService.updateSession(sessionId, {
+                place: sessionDto.place,
+                date: sessionDto.date,
+                hour: sessionDto.hour,
+                level: sessionDto.level,
+                numberUserMax: sessionDto.numberUserMax,
+                type: sessionDto.type
+            });
+        });
+    }
+    deleteSession(sessionId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const session = yield this.sessionRepositoryService.findById(sessionId);
+            if (!session) {
+                throw new common_1.NotFoundException("La session n'a pas été trouvé");
+            }
+            return this.sessionRepositoryService.deleteSession(sessionId);
+        });
+    }
 };
 SessionControllerService = __decorate([
     (0, common_1.Injectable)(),

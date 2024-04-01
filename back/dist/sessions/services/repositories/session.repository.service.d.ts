@@ -6,4 +6,6 @@ export default class SessionRepositoryService {
     findAllSessions(): Promise<Array<SessionEntity>>;
     findById(sessionId: SessionEntity['sessionId']): Promise<SessionEntity>;
     createSession(sessionData: Pick<SessionEntity, 'place' | 'level' | 'hour' | 'type' | 'date' | 'numberUserMax'>): Promise<SessionEntity>;
+    updateSession(sessionId: SessionEntity['sessionId'], sessionData: Pick<SessionEntity, 'place' | 'level' | 'hour' | 'type' | 'date' | 'numberUserMax'>): Promise<SessionEntity>;
+    deleteSession(sessionId: SessionEntity['sessionId']): Promise<SessionEntity>;
 }

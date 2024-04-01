@@ -6,4 +6,6 @@ export declare class SessionController {
     getAllProjects(): Promise<import("src/_utils/session.entity").default[]>;
     getOneSession(sessionId: number): Promise<import("src/_utils/session.entity").default>;
     postProject(sessionDto: SessionDto): Promise<import("src/_utils/session.entity").default>;
+    updateSession(sessionDto: SessionDto, sessionId: number): Promise<import("src/_utils/session.entity").default>;
+    deleteSession(sessionId: number): Promise<import("src/_utils/session.entity").default>;
 }

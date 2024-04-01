@@ -15,6 +15,7 @@ const swagger_1 = require("@nestjs/swagger");
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
+        app.setGlobalPrefix('api');
         const config = new swagger_1.DocumentBuilder()
             .setTitle('Jane Tonic')
             .setDescription('The Jane Tonic API description')
@@ -23,7 +24,6 @@ function bootstrap() {
             .build();
         const document = swagger_1.SwaggerModule.createDocument(app, config);
         swagger_1.SwaggerModule.setup('Api', app, document);
-        app.setGlobalPrefix('api');
         yield app.listen(process.env.APP_PORT);
     });
 }

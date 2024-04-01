@@ -7,4 +7,6 @@ export default class SessionControllerService {
     getAllSession(): Promise<SessionEntity[]>;
     getSessionById(sessionId: number): Promise<SessionEntity>;
     createSession(sessionDto: SessionDto): Promise<SessionEntity>;
+    updateSession(sessionId: number, sessionDto: SessionDto): Promise<SessionEntity>;
+    deleteSession(sessionId: number): Promise<SessionEntity>;
 }
