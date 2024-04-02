@@ -23,6 +23,7 @@ function bootstrap() {
             .addTag('Api')
             .build();
         const document = swagger_1.SwaggerModule.createDocument(app, config);
+        const options = new swagger_1.DocumentBuilder().addBearerAuth();
         swagger_1.SwaggerModule.setup('Api', app, document);
         yield app.listen(process.env.APP_PORT);
     });

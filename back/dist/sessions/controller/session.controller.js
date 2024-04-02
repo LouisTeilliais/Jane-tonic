@@ -26,6 +26,7 @@ const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const services_1 = require("../services");
 const session_dto_1 = require("../models/dto/session.dto");
+const jwt_auth_guard_1 = require("../../authentication/guards/jwt-auth.guard");
 let SessionController = class SessionController {
     constructor(sessionControllerService) {
         this.sessionControllerService = sessionControllerService;
@@ -53,12 +54,16 @@ let SessionController = class SessionController {
 exports.SessionController = SessionController;
 __decorate([
     (0, common_1.Get)(),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], SessionController.prototype, "getAllProjects", null);
 __decorate([
     (0, common_1.Get)(':sessionId'),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Param)('sessionId', common_1.ParseIntPipe, new common_1.DefaultValuePipe('0'))),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -66,6 +71,8 @@ __decorate([
 ], SessionController.prototype, "getOneSession", null);
 __decorate([
     (0, common_1.Post)(),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [session_dto_1.SessionDto]),
@@ -73,6 +80,8 @@ __decorate([
 ], SessionController.prototype, "postProject", null);
 __decorate([
     (0, common_1.Put)(":sessionId"),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Body)()),
     __param(1, (0, common_1.Param)('sessionId', common_1.ParseIntPipe, new common_1.DefaultValuePipe('0'))),
     __metadata("design:type", Function),
@@ -81,6 +90,8 @@ __decorate([
 ], SessionController.prototype, "updateSession", null);
 __decorate([
     (0, common_1.Delete)(':sessionId'),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Param)('sessionId', common_1.ParseIntPipe, new common_1.DefaultValuePipe('0'))),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),

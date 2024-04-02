@@ -10,12 +10,17 @@ export default class SessionRepositoryService {
         private prismaService : PrismaService
     ) {}
 
-    
+    /**
+     * Get all sessions
+     */
     public findAllSessions(): Promise<Array<SessionEntity>>{
         return this.prismaService.sessions.findMany()
     }
 
-
+    /**
+     * Get session by Id
+     * @param sessionId 
+     */
     public findById(sessionId: SessionEntity['sessionId']): Promise<SessionEntity> {
         return this.prismaService.sessions.findFirst({
             where: {
@@ -24,6 +29,10 @@ export default class SessionRepositoryService {
         })
     }
 
+    /**
+     * Create a session
+     * @param sessionData 
+     */
     public createSession(sessionData : Pick<SessionEntity, 'place' | 'level' | 'hour' | 'type' | 'date' | 'numberUserMax'> ): Promise<SessionEntity>{
         return this.prismaService.sessions.create({
             data: {
@@ -37,6 +46,11 @@ export default class SessionRepositoryService {
         })
     }
 
+    /**
+     * Update a session 
+     * @param sessionId 
+     * @param sessionData 
+     */
     public async updateSession(
         sessionId: SessionEntity['sessionId'],
         sessionData : Pick<SessionEntity, 'place' | 'level' | 'hour' | 'type' | 'date' | 'numberUserMax'> 
@@ -62,6 +76,11 @@ export default class SessionRepositoryService {
         })
     }
 
+    /**
+     * Delete session
+     * @param sessionId 
+     * @returns 
+     */
     public async deleteSession(sessionId: SessionEntity['sessionId']) : Promise<SessionEntity> {
         const session = await this.findById(sessionId)
 
