@@ -2,11 +2,12 @@ export declare class LoginUserDto {
     readonly email: string;
     readonly password: string;
 }
-export declare class CreateUserDto {
-    name: string;
-    surname: string;
+export declare class UserDto {
+    lastname: string;
+    firstname: string;
     email: string;
-    password: string;
+    phoneNumber: string;
+    sessionId: number;
 }
 export declare class UpdatePasswordDto {
     newPassword: string;

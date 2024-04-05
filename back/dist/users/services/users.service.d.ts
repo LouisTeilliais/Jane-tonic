@@ -1,10 +1,12 @@
-import { LoginUserDto, UpdatePasswordDto } from '../dto/users.user.dto';
+import { LoginUserDto, UserDto } from '../dto/users.user.dto';
 import { PrismaService } from 'src/prisma.service';
-import { User } from '@prisma/client';
+import UserEntity from 'src/_utils/user.entity';
+import UserRepositoryService from './repositories/user.repository.service';
 export declare class UsersService {
     private prisma;
-    constructor(prisma: PrismaService);
-    updatePassword(payload: UpdatePasswordDto, id: number): Promise<User>;
+    private readonly userRepositoryService;
+    constructor(prisma: PrismaService, userRepositoryService: UserRepositoryService);
     findByLogin({ email, password }: LoginUserDto): Promise<any>;
     findByPayload({ email }: any): Promise<any>;
+    createUser(userDto: UserDto): Promise<UserEntity>;
 }

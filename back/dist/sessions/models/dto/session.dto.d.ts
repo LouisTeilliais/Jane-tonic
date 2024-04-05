@@ -1,7 +1,7 @@
 export declare class SessionDto {
     place: string;
     level: string;
-    type: string;
+    sessionTypeId: number;
     date: Date;
     hour: string;
     numberUserMax: number;

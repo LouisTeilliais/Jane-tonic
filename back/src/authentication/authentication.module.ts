@@ -7,6 +7,7 @@ import { AuthenticationController } from './controller/auth.controller';
 import { UsersService } from 'src/users/services/users.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { PrismaService } from 'src/prisma.service';
+import UserRepositoryService from 'src/users/services/repositories/user.repository.service';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { PrismaService } from 'src/prisma.service';
     }),
   ],
   controllers: [AuthenticationController],
-  providers: [AuthenticationService, UsersService, JwtStrategy, PrismaService],
+  providers: [AuthenticationService, UsersService, JwtStrategy, PrismaService, UserRepositoryService],
   exports: [
     PassportModule,
     JwtModule

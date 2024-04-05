@@ -23,27 +23,33 @@ const prisma_service_1 = require("../../../prisma.service");
 let SessionRepositoryService = class SessionRepositoryService {
     constructor(prismaService) {
         this.prismaService = prismaService;
+        this.include = {
+            sessionType: true,
+            users: true
+        };
     }
     findAllSessions() {
-        return this.prismaService.sessions.findMany();
+        return this.prismaService.session.findMany();
     }
     findById(sessionId) {
-        return this.prismaService.sessions.findFirst({
+        return this.prismaService.session.findFirst({
             where: {
                 sessionId
-            }
+            },
+            include: this.include
         });
     }
     createSession(sessionData) {
-        return this.prismaService.sessions.create({
+        return this.prismaService.session.create({
             data: {
                 place: sessionData.place,
                 level: sessionData.level,
                 hour: sessionData.hour,
-                type: sessionData.type,
                 date: sessionData.date,
                 numberUserMax: sessionData.numberUserMax,
-            }
+                sessionType: sessionData.sessionTypeId ? { connect: { sessionTypeId: sessionData.sessionTypeId } } : undefined
+            },
+            include: this.include
         });
     }
     updateSession(sessionId, sessionData) {
@@ -52,7 +58,7 @@ let SessionRepositoryService = class SessionRepositoryService {
             if (!session) {
                 return null;
             }
-            return this.prismaService.sessions.update({
+            return this.prismaService.session.update({
                 where: {
                     sessionId
                 },
@@ -60,9 +66,9 @@ let SessionRepositoryService = class SessionRepositoryService {
                     place: sessionData.place,
                     level: sessionData.level,
                     hour: sessionData.hour,
-                    type: sessionData.type,
                     date: sessionData.date,
                     numberUserMax: sessionData.numberUserMax,
+                    sessionType: sessionData.sessionTypeId ? { connect: { sessionTypeId: sessionData.sessionTypeId } } : undefined
                 }
             });
         });
@@ -73,7 +79,7 @@ let SessionRepositoryService = class SessionRepositoryService {
             if (!session) {
                 return null;
             }
-            return this.prismaService.sessions.delete({
+            return this.prismaService.session.delete({
                 where: {
                     sessionId
                 }

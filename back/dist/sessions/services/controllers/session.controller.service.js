@@ -44,7 +44,7 @@ let SessionControllerService = class SessionControllerService {
                 hour: sessionDto.hour,
                 level: sessionDto.level,
                 numberUserMax: sessionDto.numberUserMax,
-                type: sessionDto.type
+                sessionTypeId: sessionDto.sessionTypeId
             });
         });
     }
@@ -60,7 +60,7 @@ let SessionControllerService = class SessionControllerService {
                 hour: sessionDto.hour,
                 level: sessionDto.level,
                 numberUserMax: sessionDto.numberUserMax,
-                type: sessionDto.type
+                sessionTypeId: sessionDto.sessionTypeId
             });
         });
     }

@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import BaseEntity from "./base.entity";
+import SessionTypeEntity from "./sessionType.entity";
 
 
 export default class SessionEntity extends BaseEntity {
@@ -12,9 +13,6 @@ export default class SessionEntity extends BaseEntity {
 
     @ApiProperty()
     level: string
-
-    @ApiProperty()
-    type: string
 
     @ApiProperty()
     date: Date
@@ -31,4 +29,9 @@ export default class SessionEntity extends BaseEntity {
     @ApiProperty()
     isFull: boolean
 
+    @ApiProperty()
+    sessionTypeId!: number
+    
+    @ApiProperty({ type: () => SessionTypeEntity })
+    sessionType?: SessionTypeEntity 
 }

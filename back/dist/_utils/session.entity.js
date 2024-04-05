@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const swagger_1 = require("@nestjs/swagger");
 const base_entity_1 = require("./base.entity");
+const sessionType_entity_1 = require("./sessionType.entity");
 class SessionEntity extends base_entity_1.default {
 }
 exports.default = SessionEntity;
@@ -26,10 +27,6 @@ __decorate([
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", String)
 ], SessionEntity.prototype, "level", void 0);
-__decorate([
-    (0, swagger_1.ApiProperty)(),
-    __metadata("design:type", String)
-], SessionEntity.prototype, "type", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", Date)
@@ -50,4 +47,12 @@ __decorate([
     (0, swagger_1.ApiProperty)(),
     __metadata("design:type", Boolean)
 ], SessionEntity.prototype, "isFull", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    __metadata("design:type", Number)
+], SessionEntity.prototype, "sessionTypeId", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)({ type: () => sessionType_entity_1.default }),
+    __metadata("design:type", sessionType_entity_1.default)
+], SessionEntity.prototype, "sessionType", void 0);
 //# sourceMappingURL=session.entity.js.map

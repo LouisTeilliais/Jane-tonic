@@ -33,31 +33,15 @@ exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
 const bcrypt_1 = require("bcrypt");
 const prisma_service_1 = require("../../prisma.service");
+const user_repository_service_1 = require("./repositories/user.repository.service");
 let UsersService = class UsersService {
-    constructor(prisma) {
+    constructor(prisma, userRepositoryService) {
         this.prisma = prisma;
-    }
-    updatePassword(payload, id) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const user = yield this.prisma.user.findUnique({
-                where: { id }
-            });
-            if (!user) {
-                throw new common_1.HttpException("invalid_credentials", common_1.HttpStatus.UNAUTHORIZED);
-            }
-            const areEqual = yield (0, bcrypt_1.compare)(payload.oldPassword, user.password);
-            if (!areEqual) {
-                throw new common_1.HttpException("invalid_credentials", common_1.HttpStatus.UNAUTHORIZED);
-            }
-            return yield this.prisma.user.update({
-                where: { id },
-                data: { password: yield (0, bcrypt_1.hash)(payload.newPassword, 10) }
-            });
-        });
+        this.userRepositoryService = userRepositoryService;
     }
     findByLogin(_a) {
         return __awaiter(this, arguments, void 0, function* ({ email, password }) {
-            const user = yield this.prisma.user.findFirst({
+            const user = yield this.prisma.admin.findFirst({
                 where: { email }
             });
             if (!user) {
@@ -73,8 +57,19 @@ let UsersService = class UsersService {
     }
     findByPayload(_a) {
         return __awaiter(this, arguments, void 0, function* ({ email }) {
-            return yield this.prisma.user.findFirst({
+            return yield this.prisma.admin.findFirst({
                 where: { email }
+            });
+        });
+    }
+    createUser(userDto) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.userRepositoryService.createSession({
+                email: userDto.email,
+                firstname: userDto.firstname,
+                lastname: userDto.lastname,
+                phoneNumber: userDto.phoneNumber,
+                sessionId: userDto.sessionId
             });
         });
     }
@@ -82,6 +77,7 @@ let UsersService = class UsersService {
 exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [prisma_service_1.PrismaService])
+    __metadata("design:paramtypes", [prisma_service_1.PrismaService,
+        user_repository_service_1.default])
 ], UsersService);
 //# sourceMappingURL=users.service.js.map

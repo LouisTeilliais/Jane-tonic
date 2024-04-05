@@ -1,64 +1,23 @@
 import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
-import {compare, hash} from 'bcrypt'
-import { CreateUserDto, LoginUserDto, UpdatePasswordDto } from '../dto/users.user.dto';
+import {compare} from 'bcrypt'
+import { LoginUserDto, UserDto } from '../dto/users.user.dto';
 import { PrismaService } from 'src/prisma.service';
-import { User } from '@prisma/client';
+import UserEntity from 'src/_utils/user.entity';
+import UserRepositoryService from './repositories/user.repository.service';
 
-// interface FormatLogin extends Partial<User> {
-//     login: string
-// }
 
 @Injectable()
 export class UsersService {
     constructor(
         private prisma: PrismaService,
+        private readonly userRepositoryService : UserRepositoryService
     ) {
     }
 
-    // //use by user module to change user password
-    async updatePassword(payload: UpdatePasswordDto, id: number): 
-      Promise<User> {
-        const user = await this.prisma.user.findUnique({
-            where: {id}
-        });
-        if (!user) {
-            throw new HttpException("invalid_credentials",  
-                HttpStatus.UNAUTHORIZED);
-        }
-        // compare passwords
-        const areEqual = await compare(payload.oldPassword,
-                                  user.password);
-        if (!areEqual) {
-            throw new HttpException("invalid_credentials", 
-               HttpStatus.UNAUTHORIZED);
-        }
-        return await this.prisma.user.update({
-            where: {id},
-            data: {password:  await hash(payload.newPassword, 10)}
-        });
-    }
-//use by auth module to register user in database
-    // async create(userDto: CreateUserDto): Promise<any> {
-
-    //     // // check if the user exists in the db
-    //     const userInDb = await this.prisma.user.findFirst({
-    //         where: {login: userDto.login}
-    //     });
-    //     if (userInDb) {
-    //         throw new HttpException("user_already_exist", 
-    //            HttpStatus.CONFLICT);
-    //     }
-    //     return await this.prisma.user.create({
-    //         ...(userDto),
-
-    //         role: "CLIENT" as const,
-    //         password: await hash(userDto.password, 10)
-    //     });
-    // }
     //use by auth module to login user
     async findByLogin({email, password}: LoginUserDto):  
                                    Promise<any> {
-        const user = await this.prisma.user.findFirst({
+        const user = await this.prisma.admin.findFirst({
             where: {email}
         });
 
@@ -81,9 +40,19 @@ export class UsersService {
 
     //use by auth module to get user in database
     async findByPayload({email}: any): Promise<any> {
-        return await this.prisma.user.findFirst({
+        return await this.prisma.admin.findFirst({
             where: {email}
         });
+    }
+
+    async createUser(userDto: UserDto): Promise<UserEntity>{
+        return this.userRepositoryService.createSession({
+            email: userDto.email,
+            firstname: userDto.firstname,
+            lastname: userDto.lastname,
+            phoneNumber: userDto.phoneNumber,
+            sessionId: userDto.sessionId
+        })
     }
 
 }

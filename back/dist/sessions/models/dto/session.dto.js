@@ -29,10 +29,10 @@ __decorate([
 ], SessionDto.prototype, "level", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsNumber)(),
     (0, class_validator_1.IsNotEmpty)(),
-    __metadata("design:type", String)
-], SessionDto.prototype, "type", void 0);
+    __metadata("design:type", Number)
+], SessionDto.prototype, "sessionTypeId", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, class_validator_1.IsDate)(),

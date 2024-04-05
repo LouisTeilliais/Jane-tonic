@@ -3,7 +3,7 @@ import {JwtService} from "@nestjs/jwt";
 import {User} from '@prisma/client'
 import {hash} from "bcrypt";
 import { PrismaService } from 'src/prisma.service';
-import { CreateUserDto, LoginUserDto } from 'src/users/dto/users.user.dto';
+import { LoginUserDto } from 'src/users/dto/users.user.dto';
 import { UsersService } from 'src/users/services/users.service';
 import { JwtPayload } from '../strategies/jwt.strategy';
 // import {User} from "../users/user.entity";

@@ -1,10 +1,16 @@
 import { Injectable } from "@nestjs/common";
+import { Prisma } from "@prisma/client";
 import SessionEntity from "src/_utils/session.entity";
 import { PrismaService } from "src/prisma.service";
 
 
 @Injectable()
 export default class SessionRepositoryService {
+
+    private readonly include: Prisma.SessionInclude = {
+        sessionType: true,
+        users: true
+    }
 
     constructor( 
         private prismaService : PrismaService
@@ -14,7 +20,7 @@ export default class SessionRepositoryService {
      * Get all sessions
      */
     public findAllSessions(): Promise<Array<SessionEntity>>{
-        return this.prismaService.sessions.findMany()
+        return this.prismaService.session.findMany()
     }
 
     /**
@@ -22,10 +28,11 @@ export default class SessionRepositoryService {
      * @param sessionId 
      */
     public findById(sessionId: SessionEntity['sessionId']): Promise<SessionEntity> {
-        return this.prismaService.sessions.findFirst({
+        return this.prismaService.session.findFirst({
             where: {
                 sessionId
-            }
+            },
+            include: this.include
         })
     }
 
@@ -33,16 +40,17 @@ export default class SessionRepositoryService {
      * Create a session
      * @param sessionData 
      */
-    public createSession(sessionData : Pick<SessionEntity, 'place' | 'level' | 'hour' | 'type' | 'date' | 'numberUserMax'> ): Promise<SessionEntity>{
-        return this.prismaService.sessions.create({
+    public createSession(sessionData: Pick<SessionEntity, 'place' | 'level' | 'hour'  | 'sessionTypeId' | 'date' | 'numberUserMax'>): Promise<SessionEntity>{
+        return this.prismaService.session.create({
             data: {
                 place: sessionData.place,
                 level: sessionData.level,
                 hour: sessionData.hour,
-                type: sessionData.type,
                 date: sessionData.date,
                 numberUserMax: sessionData.numberUserMax,
-            } 
+                sessionType: sessionData.sessionTypeId ? { connect: { sessionTypeId: sessionData.sessionTypeId}} : undefined
+            },
+            include: this.include
         })
     }
 
@@ -53,7 +61,7 @@ export default class SessionRepositoryService {
      */
     public async updateSession(
         sessionId: SessionEntity['sessionId'],
-        sessionData : Pick<SessionEntity, 'place' | 'level' | 'hour' | 'type' | 'date' | 'numberUserMax'> 
+        sessionData : Pick<SessionEntity, 'place' | 'level' | 'hour'  | 'sessionTypeId' | 'date' | 'numberUserMax'> 
     )  : Promise<SessionEntity> {
         const session = await this.findById(sessionId)
 
@@ -61,7 +69,7 @@ export default class SessionRepositoryService {
             return null
         }
 
-        return this.prismaService.sessions.update({
+        return this.prismaService.session.update({
             where: {
                 sessionId
             },  
@@ -69,9 +77,9 @@ export default class SessionRepositoryService {
                 place: sessionData.place,
                 level: sessionData.level,
                 hour: sessionData.hour,
-                type: sessionData.type,
                 date: sessionData.date,
                 numberUserMax: sessionData.numberUserMax,
+                sessionType: sessionData.sessionTypeId ? { connect: { sessionTypeId: sessionData.sessionTypeId}} : undefined
             } 
         })
     }
@@ -88,7 +96,7 @@ export default class SessionRepositoryService {
             return null
         }
 
-        return this.prismaService.sessions.delete({
+        return this.prismaService.session.delete({
             where: {
                 sessionId
             }

@@ -8,21 +8,24 @@ export class LoginUserDto {
     @ApiProperty()
     @IsNotEmpty() readonly password: string;
 }
-export class CreateUserDto {
+export class UserDto {
     
     @IsNotEmpty()
-    @ApiProperty() name: string;
+    @ApiProperty() lastname: string;
 
     @IsNotEmpty()
-    @ApiProperty() surname: string;
+    @ApiProperty() firstname: string;
     
     @IsNotEmpty()
     @ApiProperty() email: string;
 
     @ApiProperty()
-    @IsNotEmpty() password: string;
+    @IsNotEmpty() phoneNumber: string;
 
+    @ApiProperty()
+    @IsNotEmpty() sessionId: number;
 }
+
 export class UpdatePasswordDto {
 
     @IsNotEmpty()

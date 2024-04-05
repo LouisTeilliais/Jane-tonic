@@ -26,7 +26,7 @@ export default class SessionControllerService {
             hour: sessionDto.hour,
             level: sessionDto.level,
             numberUserMax: sessionDto.numberUserMax,
-            type: sessionDto.type
+            sessionTypeId: sessionDto.sessionTypeId
         })
     }
 
@@ -46,7 +46,7 @@ export default class SessionControllerService {
             hour: sessionDto.hour,
             level: sessionDto.level,
             numberUserMax: sessionDto.numberUserMax,
-            type: sessionDto.type
+            sessionTypeId: sessionDto.sessionTypeId
         })
     }
 

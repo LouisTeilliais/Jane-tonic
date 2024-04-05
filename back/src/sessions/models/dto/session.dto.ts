@@ -15,9 +15,9 @@ export class SessionDto {
     level: string 
 
     @ApiProperty()
-    @IsString()
+    @IsNumber()
     @IsNotEmpty()
-    type: string 
+    sessionTypeId: number 
 
     @ApiProperty()
     @IsDate()

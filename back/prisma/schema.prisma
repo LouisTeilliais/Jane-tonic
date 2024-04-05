@@ -10,16 +10,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Sessions {
-  sessionId                 Int      @id @default(autoincrement())
-  place              String   @map("place")
-  level              String   @map("level")
-  type               String   @map("type")
-  date               DateTime @map("date")
-  hour               String   @map("hour")
-  numberUserMax      Int      @map("number_user_max")
-  numberUserReserved Int      @default(0) @map("number_user_reserved")
-  isFull             Boolean  @default(false) @map("isFull")
+model Session {
+  sessionId          Int       @id @default(autoincrement())
+  place              String    @map("place")
+  level              String    @map("level")
+  date               DateTime  @map("date")
+  hour               String    @map("hour")
+  numberUserMax      Int       @map("number_user_max")
+  numberUserReserved Int       @default(0) @map("number_user_reserved")
+  isFull             Boolean   @default(false) @map("is_full")
+  sessionTypeId      Int       @map("session_type_id")
+  sessionType        SessionType @relation(fields: [sessionTypeId], references: [sessionTypeId])
+  users              User[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
@@ -28,16 +30,41 @@ model Sessions {
 }
 
 model User {
+  userId       Int    @id @default(autoincrement())
+  firstname    String @map("firstname")
+  lastname     String @map("lastname")
+  email        String @map("email")
+  phoneNumber  String @map("phone_number")
+  role         Role   @default(CLIENT)
+  session      Session @relation(fields: [sessionId], references: [sessionId])
+  sessionId    Int
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  @@map("users")
+}
+
+model SessionType {
+  sessionTypeId Int  @id @default(autoincrement())
+  sessionType String @map("session_type")
+  sessions Session[]
+
+  @@map("session_type")
+}
+
+model Admin {
   id       Int    @id @default(autoincrement())
   email    String
   password String
-  role     Role   @default(CLIENT)
+  role     Role   @default(ADMIN)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
 
-  @@map("user")
+  @@map("admin")
 }
+
 
 enum Role {
   CLIENT
