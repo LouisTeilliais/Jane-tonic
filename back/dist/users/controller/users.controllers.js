@@ -16,7 +16,6 @@ exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const users_service_1 = require("../services/users.service");
-const jwt_auth_guard_1 = require("../../authentication/guards/jwt-auth.guard");
 const users_user_dto_1 = require("../dto/users.user.dto");
 let UsersController = class UsersController {
     constructor(usersService) {
@@ -29,8 +28,6 @@ let UsersController = class UsersController {
 exports.UsersController = UsersController;
 __decorate([
     (0, common_1.Post)(),
-    (0, swagger_1.ApiBearerAuth)(),
-    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [users_user_dto_1.UserDto]),

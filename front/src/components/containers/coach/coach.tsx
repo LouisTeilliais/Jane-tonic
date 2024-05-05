@@ -10,7 +10,8 @@ export default function Coach(): ReactElement {
             <h2>
                 Eugénie Bardoux
             </h2>
-            <img className="coach-img" src="src/assets/logo.png" alt="" />
+            <img className="coach-img" src="src/assets/prof.png" alt="" />
+            <br />
             <div className="text-container-coach">
                 <p> <b>CPQ</b> Certificat de qualifications professionnelles </p>
                 <p>

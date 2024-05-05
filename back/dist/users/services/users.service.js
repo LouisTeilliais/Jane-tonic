@@ -34,10 +34,14 @@ const common_1 = require("@nestjs/common");
 const bcrypt_1 = require("bcrypt");
 const prisma_service_1 = require("../../prisma.service");
 const user_repository_service_1 = require("./repositories/user.repository.service");
+const services_1 = require("../../sessions/services");
+const mailer_1 = require("@nestjs-modules/mailer");
 let UsersService = class UsersService {
-    constructor(prisma, userRepositoryService) {
+    constructor(prisma, userRepositoryService, sessionRepositoryService, mailerService) {
         this.prisma = prisma;
         this.userRepositoryService = userRepositoryService;
+        this.sessionRepositoryService = sessionRepositoryService;
+        this.mailerService = mailerService;
     }
     findByLogin(_a) {
         return __awaiter(this, arguments, void 0, function* ({ email, password }) {
@@ -64,6 +68,19 @@ let UsersService = class UsersService {
     }
     createUser(userDto) {
         return __awaiter(this, void 0, void 0, function* () {
+            const session = yield this.sessionRepositoryService.findById(userDto.sessionId);
+            if (session.isFull) {
+                throw new common_1.NotFoundException("La session est complète");
+            }
+            yield this.sessionRepositoryService.updateSessionMember(userDto.sessionId, {
+                numberUserReserved: session.numberUserReserved + 1,
+                isFull: session.numberUserMax === (session.numberUserReserved + 1)
+            });
+            yield this.mailerService.sendMail({
+                to: userDto.email,
+                subject: '[Jane Tonic] Confirmation réservation',
+                text: `Votre séance avec Jane Tonic du ${session.date} a bien été reservée !`
+            });
             return this.userRepositoryService.createSession({
                 email: userDto.email,
                 firstname: userDto.firstname,
@@ -78,6 +95,8 @@ exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [prisma_service_1.PrismaService,
-        user_repository_service_1.default])
+        user_repository_service_1.default,
+        services_1.SessionRepositoryService,
+        mailer_1.MailerService])
 ], UsersService);
 //# sourceMappingURL=users.service.js.map

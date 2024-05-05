@@ -84,6 +84,33 @@ export default class SessionRepositoryService {
         })
     }
 
+     /**
+     * Update a session 
+     * @param sessionId 
+     * @param sessionData 
+     */
+     public async updateSessionMember(
+        sessionId: SessionEntity['sessionId'],
+        sessionData : Pick<SessionEntity, 'numberUserReserved' | 'isFull' > 
+    )  : Promise<SessionEntity> {
+        const session = await this.findById(sessionId)
+
+        if (!session) {
+            return null
+        }
+
+        return this.prismaService.session.update({
+            where: {
+                sessionId
+            },  
+            data: {
+                numberUserReserved: sessionData.numberUserReserved,
+                isFull: sessionData.isFull
+            } 
+        })
+    }
+
+
     /**
      * Delete session
      * @param sessionId 

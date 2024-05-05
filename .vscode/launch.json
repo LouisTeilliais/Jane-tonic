@@ -2,6 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "🌐 React",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run start",
+            "cwd": "${workspaceFolder}/front"
+        },
+        {
             "name": "😺 Nest",
             "type": "node-terminal",
             "request": "launch",

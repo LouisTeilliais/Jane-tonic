@@ -12,6 +12,7 @@ const users_service_1 = require("./services/users.service");
 const prisma_service_1 = require("../prisma.service");
 const users_controllers_1 = require("./controller/users.controllers");
 const user_repository_service_1 = require("./services/repositories/user.repository.service");
+const services_1 = require("../sessions/services");
 let UsersModule = class UsersModule {
 };
 exports.UsersModule = UsersModule;
@@ -20,7 +21,7 @@ exports.UsersModule = UsersModule = __decorate([
         imports: [],
         exports: [],
         controllers: [users_controllers_1.UsersController],
-        providers: [users_service_1.UsersService, prisma_service_1.PrismaService, user_repository_service_1.default]
+        providers: [users_service_1.UsersService, prisma_service_1.PrismaService, user_repository_service_1.default, services_1.SessionRepositoryService]
     })
 ], UsersModule);
 //# sourceMappingURL=users.module.js.map

@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "Light";   /*Can be any text*/
+    src: local("Nunito"),
+          url("src/assets/fonts/Nunito.ttf") format("truetype");
+}
+
+.text-field {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Light';
+  }
+  
+.text-field-label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+  font-family: 'Light';   
+}
+
+.text-field-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+  

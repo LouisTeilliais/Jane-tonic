@@ -18,6 +18,7 @@ h2 {
 
 .coach-img {
     height: 20rem;
+    border-radius: 10px;
 }
 
 .text-container-coach {

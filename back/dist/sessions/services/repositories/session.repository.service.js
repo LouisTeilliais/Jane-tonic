@@ -73,6 +73,23 @@ let SessionRepositoryService = class SessionRepositoryService {
             });
         });
     }
+    updateSessionMember(sessionId, sessionData) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const session = yield this.findById(sessionId);
+            if (!session) {
+                return null;
+            }
+            return this.prismaService.session.update({
+                where: {
+                    sessionId
+                },
+                data: {
+                    numberUserReserved: sessionData.numberUserReserved,
+                    isFull: sessionData.isFull
+                }
+            });
+        });
+    }
     deleteSession(sessionId) {
         return __awaiter(this, void 0, void 0, function* () {
             const session = yield this.findById(sessionId);

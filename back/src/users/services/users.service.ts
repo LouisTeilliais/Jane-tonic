@@ -1,16 +1,20 @@
-import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
+import {HttpException, HttpStatus, Injectable, NotFoundException} from '@nestjs/common';
 import {compare} from 'bcrypt'
 import { LoginUserDto, UserDto } from '../dto/users.user.dto';
 import { PrismaService } from 'src/prisma.service';
 import UserEntity from 'src/_utils/user.entity';
 import UserRepositoryService from './repositories/user.repository.service';
+import { SessionRepositoryService } from 'src/sessions/services';
+import { MailerService } from '@nestjs-modules/mailer';
 
 
 @Injectable()
 export class UsersService {
     constructor(
         private prisma: PrismaService,
-        private readonly userRepositoryService : UserRepositoryService
+        private readonly userRepositoryService : UserRepositoryService,
+        private readonly sessionRepositoryService : SessionRepositoryService,
+        private readonly mailerService: MailerService,
     ) {
     }
 
@@ -38,7 +42,6 @@ export class UsersService {
         return rest;
     }
 
-    //use by auth module to get user in database
     async findByPayload({email}: any): Promise<any> {
         return await this.prisma.admin.findFirst({
             where: {email}
@@ -46,6 +49,25 @@ export class UsersService {
     }
 
     async createUser(userDto: UserDto): Promise<UserEntity>{
+        const session = await this.sessionRepositoryService.findById(userDto.sessionId)
+
+
+        if (session.isFull) {
+            throw new NotFoundException("La session est complète")
+        }
+
+        await this.sessionRepositoryService.updateSessionMember(userDto.sessionId, {
+            numberUserReserved: session.numberUserReserved + 1,
+            isFull: session.numberUserMax === (session.numberUserReserved + 1)
+        });
+
+
+        await this.mailerService.sendMail({
+            to: userDto.email,
+            subject: '[Jane Tonic] Confirmation réservation',
+            text: `Votre séance avec Jane Tonic du ${session.date} a bien été reservée !`
+        })
+
         return this.userRepositoryService.createSession({
             email: userDto.email,
             firstname: userDto.firstname,

@@ -17,6 +17,7 @@ const users_service_1 = require("../users/services/users.service");
 const jwt_strategy_1 = require("./strategies/jwt.strategy");
 const prisma_service_1 = require("../prisma.service");
 const user_repository_service_1 = require("../users/services/repositories/user.repository.service");
+const services_1 = require("../sessions/services");
 let AuthenticationModule = class AuthenticationModule {
 };
 exports.AuthenticationModule = AuthenticationModule;
@@ -37,7 +38,7 @@ exports.AuthenticationModule = AuthenticationModule = __decorate([
             }),
         ],
         controllers: [auth_controller_1.AuthenticationController],
-        providers: [authentication_service_1.AuthenticationService, users_service_1.UsersService, jwt_strategy_1.JwtStrategy, prisma_service_1.PrismaService, user_repository_service_1.default],
+        providers: [authentication_service_1.AuthenticationService, users_service_1.UsersService, jwt_strategy_1.JwtStrategy, prisma_service_1.PrismaService, user_repository_service_1.default, services_1.SessionRepositoryService],
         exports: [
             passport_1.PassportModule,
             jwt_1.JwtModule

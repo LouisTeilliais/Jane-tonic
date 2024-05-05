@@ -72,3 +72,11 @@ button {
     width: 6rem;
     font-weight: bold;
 }
+
+.reservation-info{
+    margin-top: 0.5rem;
+    margin-left: -7rem;
+    background-color: #f7f7f7;
+    width: 36rem;
+    height: 20%;
+}

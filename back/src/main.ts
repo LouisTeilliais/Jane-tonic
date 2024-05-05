@@ -6,6 +6,13 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
   app.setGlobalPrefix('api')
+
+  app.enableCors({
+    origin: 'http://localhost:5173', // Origine autorisée.
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Méthodes HTTP autorisées.
+    allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés.
+    credentials: true // Autorise l'envoi de cookies et d'autres informations d'identification.
+  });
   
   const config = new DocumentBuilder()
     .setTitle('Jane Tonic')

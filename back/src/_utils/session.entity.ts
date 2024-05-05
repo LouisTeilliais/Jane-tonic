@@ -27,7 +27,7 @@ export default class SessionEntity extends BaseEntity {
     numberUserReserved?: number
 
     @ApiProperty()
-    isFull: boolean
+    isFull?: boolean
 
     @ApiProperty()
     sessionTypeId!: number

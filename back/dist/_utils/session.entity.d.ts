@@ -8,7 +8,7 @@ export default class SessionEntity extends BaseEntity {
     hour: string;
     numberUserMax: number;
     numberUserReserved?: number;
-    isFull: boolean;
+    isFull?: boolean;
     sessionTypeId: number;
     sessionType?: SessionTypeEntity;
 }

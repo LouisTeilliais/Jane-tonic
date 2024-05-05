@@ -1,7 +1,12 @@
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import './diary-card.css'
 
 export default function DiaryCard() : ReactElement {
+
+    const [isReserved, setIsReserved] = useState(false)
+
+    console.log(isReserved)
+
     return (
         <>
             <div className="container-card">
@@ -15,7 +20,9 @@ export default function DiaryCard() : ReactElement {
                         <p>
                             09h à 10h
                         </p>
-                        <button>
+                        <button
+                            onClick={() => setIsReserved(!isReserved)}
+                        >
                             RESERVER
                         </button>
                     </div>
@@ -30,6 +37,11 @@ export default function DiaryCard() : ReactElement {
                             TOUS NIVEAUX
                         </p>
                     </div>
+                    {/* {isReserved && 
+                        <div className="reservation-info">
+                            hello
+                        </div>
+                    } */}
                 </div>
             </div>
         </>
