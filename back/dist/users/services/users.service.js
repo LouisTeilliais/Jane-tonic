@@ -35,13 +35,11 @@ const bcrypt_1 = require("bcrypt");
 const prisma_service_1 = require("../../prisma.service");
 const user_repository_service_1 = require("./repositories/user.repository.service");
 const services_1 = require("../../sessions/services");
-const mailer_1 = require("@nestjs-modules/mailer");
 let UsersService = class UsersService {
-    constructor(prisma, userRepositoryService, sessionRepositoryService, mailerService) {
+    constructor(prisma, userRepositoryService, sessionRepositoryService) {
         this.prisma = prisma;
         this.userRepositoryService = userRepositoryService;
         this.sessionRepositoryService = sessionRepositoryService;
-        this.mailerService = mailerService;
     }
     findByLogin(_a) {
         return __awaiter(this, arguments, void 0, function* ({ email, password }) {
@@ -49,11 +47,11 @@ let UsersService = class UsersService {
                 where: { email }
             });
             if (!user) {
-                throw new common_1.HttpException("invalid_credentials", common_1.HttpStatus.UNAUTHORIZED);
+                throw new common_1.HttpException("Utilisateur non trouvé", common_1.HttpStatus.UNAUTHORIZED);
             }
             const areEqual = yield (0, bcrypt_1.compare)(password, user.password);
             if (!areEqual) {
-                throw new common_1.HttpException("invalid_credentials", common_1.HttpStatus.UNAUTHORIZED);
+                throw new common_1.HttpException("Mot de passe invalide", common_1.HttpStatus.UNAUTHORIZED);
             }
             const { password: p } = user, rest = __rest(user, ["password"]);
             return rest;
@@ -76,11 +74,6 @@ let UsersService = class UsersService {
                 numberUserReserved: session.numberUserReserved + 1,
                 isFull: session.numberUserMax === (session.numberUserReserved + 1)
             });
-            yield this.mailerService.sendMail({
-                to: userDto.email,
-                subject: '[Jane Tonic] Confirmation réservation',
-                text: `Votre séance avec Jane Tonic du ${session.date} a bien été reservée !`
-            });
             return this.userRepositoryService.createSession({
                 email: userDto.email,
                 firstname: userDto.firstname,
@@ -96,7 +89,6 @@ exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [prisma_service_1.PrismaService,
         user_repository_service_1.default,
-        services_1.SessionRepositoryService,
-        mailer_1.MailerService])
+        services_1.SessionRepositoryService])
 ], UsersService);
 //# sourceMappingURL=users.service.js.map

@@ -11,7 +11,6 @@ const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const authentication_module_1 = require("./authentication/authentication.module");
 const users_module_1 = require("./users/users.module");
-const mailer_1 = require("@nestjs-modules/mailer");
 const sesssion_module_1 = require("./sessions/sesssion.module");
 let AppModule = class AppModule {
 };
@@ -22,24 +21,6 @@ exports.AppModule = AppModule = __decorate([
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
                 envFilePath: '.env'
-            }),
-            mailer_1.MailerModule.forRootAsync({
-                imports: [config_1.ConfigModule],
-                useFactory: (configService) => ({
-                    transport: {
-                        host: 'smtp.gmail.com',
-                        port: 587,
-                        secure: false,
-                        auth: {
-                            user: configService.get('MAIL_USER'),
-                            pass: configService.get('MAIL_PASSWORD')
-                        },
-                    },
-                    defaults: {
-                        from: `<${configService.get('MAIL_USER')}>`,
-                    },
-                }),
-                inject: [config_1.ConfigService],
             }),
             authentication_module_1.AuthenticationModule,
             users_module_1.UsersModule,

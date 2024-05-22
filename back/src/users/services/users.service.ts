@@ -5,7 +5,7 @@ import { PrismaService } from 'src/prisma.service';
 import UserEntity from 'src/_utils/user.entity';
 import UserRepositoryService from './repositories/user.repository.service';
 import { SessionRepositoryService } from 'src/sessions/services';
-import { MailerService } from '@nestjs-modules/mailer';
+// import { MailerService } from '@nestjs-modules/mailer';
 
 
 @Injectable()
@@ -14,7 +14,7 @@ export class UsersService {
         private prisma: PrismaService,
         private readonly userRepositoryService : UserRepositoryService,
         private readonly sessionRepositoryService : SessionRepositoryService,
-        private readonly mailerService: MailerService,
+        // private readonly mailerService: MailerService,
     ) {
     }
 
@@ -22,11 +22,11 @@ export class UsersService {
     async findByLogin({email, password}: LoginUserDto):  
                                    Promise<any> {
         const user = await this.prisma.admin.findFirst({
-            where: {email}
+            where: { email }
         });
 
         if (!user) {
-            throw new HttpException("invalid_credentials",  
+            throw new HttpException("Utilisateur non trouvé",  
                   HttpStatus.UNAUTHORIZED);
         }
 
@@ -34,7 +34,7 @@ export class UsersService {
         const areEqual = await compare(password, user.password);
 
         if (!areEqual) {
-            throw new HttpException("invalid_credentials",
+            throw new HttpException("Mot de passe invalide",
                 HttpStatus.UNAUTHORIZED);
         }
 
@@ -62,11 +62,11 @@ export class UsersService {
         });
 
 
-        await this.mailerService.sendMail({
-            to: userDto.email,
-            subject: '[Jane Tonic] Confirmation réservation',
-            text: `Votre séance avec Jane Tonic du ${session.date} a bien été reservée !`
-        })
+        // await this.mailerService.sendMail({
+        //     to: userDto.email,
+        //     subject: '[Jane Tonic] Confirmation réservation',
+        //     text: `Votre séance avec Jane Tonic du ${session.date} a bien été reservée !`
+        // })
 
         return this.userRepositoryService.createSession({
             email: userDto.email,

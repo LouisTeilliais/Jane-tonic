@@ -20,7 +20,9 @@ export default class SessionRepositoryService {
      * Get all sessions
      */
     public findAllSessions(): Promise<Array<SessionEntity>>{
-        return this.prismaService.session.findMany()
+        return this.prismaService.session.findMany({
+            include: this.include
+        })
     }
 
     /**

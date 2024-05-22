@@ -29,7 +29,9 @@ let SessionRepositoryService = class SessionRepositoryService {
         };
     }
     findAllSessions() {
-        return this.prismaService.session.findMany();
+        return this.prismaService.session.findMany({
+            include: this.include
+        });
     }
     findById(sessionId) {
         return this.prismaService.session.findFirst({

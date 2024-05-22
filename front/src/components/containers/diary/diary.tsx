@@ -1,13 +1,18 @@
-import { ReactElement } from "react";
-import './diary.css'
-import DiaryCard from "../../element/diary-card/diary-card";
+import { ReactElement } from 'react';
+import './diary.css';
+import DiaryCard from '../../element/diary-card/diary-card';
+import { Session } from '../../../types/session';
 
-export default function Diary() : ReactElement {
-    return(
-        <div className="diary-container">
-            <DiaryCard></DiaryCard>
-            {/* <DiaryCard></DiaryCard>
-            <DiaryCard></DiaryCard> */}
-        </div>
-    )
+interface DiaryProps {
+  sessions: Session[];
+}
+
+export default function Diary({ sessions }: DiaryProps): ReactElement {
+  return (
+    <div className="diary-container">
+      {sessions.map(session => (
+        <DiaryCard key={session.sessionId} session={session} />
+      ))}
+    </div>
+  );
 }

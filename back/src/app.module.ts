@@ -11,24 +11,24 @@ import SessionModule from './sessions/sesssion.module';
       isGlobal: true,
       envFilePath: '.env'
     }),
-    MailerModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => ({
-        transport: {
-          host: 'smtp.gmail.com',
-          port: 587,
-          secure: false,
-          auth: {
-            user: configService.get('MAIL_USER'),
-            pass: configService.get('MAIL_PASSWORD')
-        },
-        },
-        defaults: {
-          from: `<${configService.get('MAIL_USER')}>`, // Votre nom et votre adresse email Gmail
-        },
-      }),
-      inject: [ConfigService],
-    }),
+    // MailerModule.forRootAsync({
+    //   imports: [ConfigModule],
+    //   useFactory: (configService: ConfigService) => ({
+    //     transport: {
+    //       host: 'smtp.gmail.com',
+    //       port: 587,
+    //       secure: false,
+    //       auth: {
+    //         user: configService.get('MAIL_USER'),
+    //         pass: configService.get('MAIL_PASSWORD')
+    //     },
+    //     },
+    //     defaults: {
+    //       from: `<${configService.get('MAIL_USER')}>`, // Votre nom et votre adresse email Gmail
+    //     },
+    //   }),
+    //   inject: [ConfigService],
+    // }),
     AuthenticationModule,
     UsersModule,
     SessionModule,

@@ -10,8 +10,8 @@ export class SessionController {
     constructor(private readonly sessionControllerService: SessionControllerService) {}
 
     @Get()
-    @ApiBearerAuth()
-    @UseGuards(JwtAuthGuard)
+    // @ApiBearerAuth()
+    // @UseGuards(JwtAuthGuard)
     async getAllProjects() {
         return this.sessionControllerService.getAllSession();
     }
