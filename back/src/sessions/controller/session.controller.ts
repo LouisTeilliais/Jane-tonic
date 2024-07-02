@@ -9,13 +9,19 @@ import { JwtAuthGuard } from "src/authentication/guards/jwt-auth.guard";
 export class SessionController {
     constructor(private readonly sessionControllerService: SessionControllerService) {}
 
+    
+    @Get('/next')
+    async getTopFiveProjects() {
+        return this.sessionControllerService.getTopFiveSession();
+    }
+    
     @Get()
-    // @ApiBearerAuth()
-    // @UseGuards(JwtAuthGuard)
+    @ApiBearerAuth()
+    @UseGuards(JwtAuthGuard)
     async getAllProjects() {
         return this.sessionControllerService.getAllSession();
     }
-
+    
     @Get(':sessionId')
     @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)

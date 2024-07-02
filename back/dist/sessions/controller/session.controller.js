@@ -31,6 +31,11 @@ let SessionController = class SessionController {
     constructor(sessionControllerService) {
         this.sessionControllerService = sessionControllerService;
     }
+    getTopFiveProjects() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.sessionControllerService.getTopFiveSession();
+        });
+    }
     getAllProjects() {
         return __awaiter(this, void 0, void 0, function* () {
             return this.sessionControllerService.getAllSession();
@@ -53,7 +58,15 @@ let SessionController = class SessionController {
 };
 exports.SessionController = SessionController;
 __decorate([
+    (0, common_1.Get)('/next'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], SessionController.prototype, "getTopFiveProjects", null);
+__decorate([
     (0, common_1.Get)(),
+    (0, swagger_1.ApiBearerAuth)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)

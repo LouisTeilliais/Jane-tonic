@@ -13,6 +13,12 @@ export default class SessionControllerService {
         return sessions   
     }
 
+    async getTopFiveSession() : Promise<SessionEntity[]>{
+        const sessions = await this.sessionRepositoryService.findTopFiveSessions();
+        
+        return sessions   
+    }
+
     async getSessionById(sessionId: number) : Promise<SessionEntity>{
         const session = await this.sessionRepositoryService.findById(sessionId)
         

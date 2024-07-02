@@ -1,10 +1,10 @@
 import { ReactElement, useState } from 'react';
 import './diary-card.css';
-import { Session } from '../../../types/session';
+import { Session } from '../../../requests/models/session';
 
 interface DiaryCardProps {
     session: Session;
-  }
+}
   
 
 export default function DiaryCard({ session } : DiaryCardProps) : ReactElement {

@@ -26,6 +26,19 @@ export default class SessionRepositoryService {
     }
 
     /**
+     * Get all sessions
+     */
+    public findTopFiveSessions(): Promise<Array<SessionEntity>>{
+        return this.prismaService.session.findMany({
+            orderBy: {
+                date : 'desc'
+            },
+            take: 5,
+            include: this.include
+        })
+    }
+
+    /**
      * Get session by Id
      * @param sessionId 
      */

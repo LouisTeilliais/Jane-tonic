@@ -4,6 +4,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { UsersModule } from './users/users.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import SessionModule from './sessions/sesssion.module';
+import ParamsModule from './params/params.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import SessionModule from './sessions/sesssion.module';
     AuthenticationModule,
     UsersModule,
     SessionModule,
+    ParamsModule
   ],
   controllers: [],
   providers: [],

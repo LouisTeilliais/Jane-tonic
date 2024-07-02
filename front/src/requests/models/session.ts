@@ -1,14 +1,16 @@
 export interface Session {
-    createdAt: string;
-    date: string;
+    sessionId: number,
+    createdAt: Date;
+    date: Date;
     hour: string;
     isFull: boolean;
     level: string;
     numberUserMax: number;
     numberUserReserved: number;
     place: string;
-    sessionId: number;
     updatedAt: string;
+    sessionTypeId: number;
+
     sessionType : {
         sessionTypeId: number;
         sessionType: string;

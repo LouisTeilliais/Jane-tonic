@@ -5,6 +5,7 @@ export default class SessionControllerService {
     private readonly sessionRepositoryService;
     constructor(sessionRepositoryService: SessionRepositoryService);
     getAllSession(): Promise<SessionEntity[]>;
+    getTopFiveSession(): Promise<SessionEntity[]>;
     getSessionById(sessionId: number): Promise<SessionEntity>;
     createSession(sessionDto: SessionDto): Promise<SessionEntity>;
     updateSession(sessionId: number, sessionDto: SessionDto): Promise<SessionEntity>;

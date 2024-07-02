@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import './diary.css';
 import DiaryCard from '../../element/diary-card/diary-card';
-import { Session } from '../../../types/session';
+import { Session } from '../../../requests/models/session';
 
 interface DiaryProps {
   sessions: Session[];

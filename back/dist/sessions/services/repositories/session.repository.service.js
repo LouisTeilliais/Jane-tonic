@@ -33,6 +33,15 @@ let SessionRepositoryService = class SessionRepositoryService {
             include: this.include
         });
     }
+    findTopFiveSessions() {
+        return this.prismaService.session.findMany({
+            orderBy: {
+                date: 'desc'
+            },
+            take: 5,
+            include: this.include
+        });
+    }
     findById(sessionId) {
         return this.prismaService.session.findFirst({
             where: {

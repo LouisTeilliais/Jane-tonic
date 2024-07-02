@@ -6,9 +6,10 @@ export interface TextFieldProps {
     type: string
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    readonly?: boolean
 }
 
-const TextField = ({ label, placeholder, type, value, onChange }: TextFieldProps) => {
+const TextField = ({ label, placeholder, type, value, onChange, readonly }: TextFieldProps) => {
   return (
     <div className="text-field">
       {label && <label className="text-field-label">{label}</label>}
@@ -18,6 +19,8 @@ const TextField = ({ label, placeholder, type, value, onChange }: TextFieldProps
             placeholder={placeholder} 
             value={value}
             onChange={onChange}
+            readOnly={readonly}
+            disabled={readonly}
           />
     </div>
   );

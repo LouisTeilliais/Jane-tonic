@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Index from './pages/home';
 import Login from './pages/login';
 import ProtectedRoute from './components/layout/protected-routes';
-import Admin from './pages/admin/admin';
+import AdminWrapper from './pages/admin/index/admin.wrapper';
+import AdminIndexWrapper from './pages/admin/[sessionId]/admin.sessionId.wraper';
+import { NEW } from './types/other';
 
 function App() {
   return (
@@ -17,7 +19,23 @@ function App() {
             path="/admin" 
             element={
               <ProtectedRoute>
-                <Admin />
+                <AdminWrapper />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/admin/:sessionId" 
+            element={
+              <ProtectedRoute>
+                <AdminIndexWrapper />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path={`/utilisateurs/${NEW}`}
+            element={
+              <ProtectedRoute>
+                <AdminIndexWrapper />
               </ProtectedRoute>
             } 
           />

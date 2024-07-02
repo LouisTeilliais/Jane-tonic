@@ -8,7 +8,7 @@ import Tarifs from '../../components/containers/tarifs/prices';
 import Footer from '../../components/element/footer/footer';
 import Coach from '../../components/containers/coach/coach';
 import { useEffect, useState } from 'react';
-import { getAllSession } from '../../requests/session';
+import { getTopFiveSession } from '../../requests/session';
 
 export default function Index() {
   const [sessions, setSessions] = useState([]);
@@ -16,7 +16,7 @@ export default function Index() {
   useEffect(() => {
     const fetchSessions = async () => {
       try {
-        const sessions = await getAllSession();
+        const sessions = await getTopFiveSession();
         setSessions(sessions);
       } catch (error) {
         console.log("Failed to fetch sessions:", error);

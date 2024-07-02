@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fluentui-contrib/react-data-grid-react-window": "^1.1.2",
+    "@fluentui/react": "^8.118.6",
+    "@fluentui/react-components": "^9.53.0",
+    "@fluentui/react-data-grid-react-window": "^9.0.0-beta.40",
+    "@fluentui/react-datepicker-compat": "^0.4.39",
     "axios": "^1.6.8",
     "classnames": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3"
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.21.3",
+    "react-use": "^17.5.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.8",
@@ -26,6 +33,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "sass": "^1.77.4",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
