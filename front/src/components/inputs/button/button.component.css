@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Light";   /*Can be any text*/
+    src: local("Nunito"),
+          url("src/assets/fonts/Nunito.ttf") format("truetype");
+}
+
+
+.login-button {
+    background-color: #e72f73;
+    color: white;
+    height: 2rem;
+    width: 24rem;
+    border-radius: 5px;
+    font-family: 'Light';
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+}

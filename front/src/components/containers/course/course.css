@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "Light";   /*Can be any text*/
+    src: local("Nunito"),
+          url("src/assets/fonts/Nunito.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Italic";   /*Can be any text*/
+    src: local("Nunito Italic"),
+          url("src/assets/fonts/Nunito-Italic.ttf") format("truetype");
+}
+
+
+.img-course{
+ height: 8rem;
+}
+
+.course-container {
+ display: flex;
+ justify-content: center;
+}
+
+.text-container {
+ width: 33%;
+}
+
+.course-title{
+ font-family: 'Italic';
+ margin-bottom: -0.5rem;
+ margin-top: 0;
+}
+
+.course-text{
+    font-family: 'Light';
+    margin-bottom: -1rem;
+   }
+   

@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Light";   /*Can be any text*/
+    src: local("Nunito"),
+          url("src/assets/fonts/Nunito.ttf") format("truetype");
+}
+
+
+.container-coach {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-family: 'Light';
+}
+
+.coach-img {
+    height: 20rem;
+    border-radius: 10px;
+}
+
+.text-container-coach {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    font-family: 'Light';
+    /* font-size: 15px; */
+}
+
+p {
+    margin: 0;
+}

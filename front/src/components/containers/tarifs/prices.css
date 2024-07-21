@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "Light";   /*Can be any text*/
+    src: local("Nunito"),
+          url("src/assets/fonts/Nunito.ttf") format("truetype");
+}
+
+.bloc-tarifs{
+    font-family: 'Light';
+    margin-bottom: 3%;
+}
+
+/* COURS COLLECTIF 1h */
+.session-collec-1h {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    margin-top: 2%;
+}   
+
+.session-collec-1h .title, .session-collec-1h, .session-collec-1h #titre-pilates {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.session-collec-1h #liste-prix-séances-circuit, .session-collec-1h #liste-prix-séances-pilates {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0
+}
+
+.session-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit, .session-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates {
+    margin: 0;
+    padding: 10px;
+    background-color: lightgray;
+    color: black;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    list-style: none;
+    width: 50%;
+}
+
+.session-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit span, .session-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates span {
+    display: inline-block;
+    text-align: left; /* Aligner le texte des séances à gauche */
+    margin-right: 40%; /* Décaler le texte des séances vers la gauche */
+}
+
+.session-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit strong, .session-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates strong{
+    display: inline-block;
+    text-align: right; /* Aligner le texte des prix à droite */
+    margin-left: 40%; /* Décaler le texte des prix vers la droite */
+}
+
+
+/* COURS PARTICULIER 1h */
+.cours-partic-dom-1h {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    margin-top: 2%;
+}
+
+.cours-partic-dom-1h .titre, .cours-partic-dom-1h #subtitles{
+    text-align: center;
+    font-weight: bold;
+}
+
+.cours-partic-dom-1h #liste-prix-séances {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0
+}
+
+.cours-partic-dom-1h #liste-prix-séances #titre{
+    margin: 0;
+    padding: 10px;
+}
+
+.cours-partic-dom-1h #liste-prix-séances #prix-séance-domicile{
+    margin: 0;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    list-style: none;
+    width: 50%;
+}
+
+
+
+#reglement-domicile {
+    text-align: center;
+    font-size: 0.8em;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.prices-container{
+    background-color: #f7f7f7;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 2rem;
+    font-family: 'Light';
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+}
+
+.prices-container-black {
+    background-color: black;
+    color: #f7f7f7;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    height: 2rem;
+    font-family: 'Light';
+    font-weight: 800;
+    margin-bottom: 0.3rem;
+}
+
+.text-sessions {
+    margin-left: 1rem;
+}
+
+.text-prices {
+    margin-right: 1rem;
+}
+
+.container-rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}

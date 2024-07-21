@@ -1,0 +1,32 @@
+.container-login {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  height: 100vh;
+}
+.login-card {
+  height: 400px;
+  width: 450px;
+  border: 1px solid;
+  border-radius: 5px;  
+  /* box-shadow: 0.5px 0.5px 0.5px 0.5px; */
+}
+
+.login-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.input-container {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+img {
+  height: 150px;
+}
+
+.button-container {
+  justify-content: center;
+}

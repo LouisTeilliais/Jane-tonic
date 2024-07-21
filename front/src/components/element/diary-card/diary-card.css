@@ -1,0 +1,82 @@
+.container-card {
+    display: flex ;
+    height: 10rem;
+    width: 50%;
+    background-color: #30b4a6;
+    color: white;
+    border-radius: 10px;
+}
+
+.container-date {
+    color:#30b4a6;
+    height: 10rem;
+    width: 20%;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px; 
+}
+
+.date-number {
+    font-size: 80px;
+    font-weight: 800;
+    margin-top: -1rem;
+}
+
+.date-day {
+    margin-top: 1.3rem;
+}
+
+.date-month {
+    margin-top: -1rem;
+}
+
+
+p {
+    font-weight: 800;
+}
+
+.container-info {
+    width: 80%;
+}
+
+.container-info-top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.container-info-middle {
+    margin-left: 1rem;
+}
+
+.place-card {
+    margin-top: 0.5rem;
+}
+
+.title-card {
+    font-size: xxx-large;
+}
+
+.level-card {
+    font-size: x-small;
+}
+
+button {
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    width: 6rem;
+    font-weight: bold;
+}
+
+.reservation-info{
+    margin-top: 0.5rem;
+    margin-left: -7rem;
+    background-color: #f7f7f7;
+    width: 36rem;
+    height: 20%;
+}

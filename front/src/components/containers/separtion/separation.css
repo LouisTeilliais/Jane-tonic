@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Medium";   /*Can be any text*/
+  src: local("TRBalloon"),
+        url("src/assets/fonts/TRBalloon.ttf") format("truetype");
+}
+  
+
+h1 {
+ font-family: 'Medium';
+ font-size: 3rem; 
+}
+
+.title-separation {
+ display: flex;
+ align-items: center;
+}
+  
+.title-bar {
+ background-color: black;
+ height: 0.2rem;
+ border-radius: 10px;
+ width: 30%;
+}
