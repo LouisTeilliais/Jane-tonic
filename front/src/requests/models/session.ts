@@ -9,7 +9,7 @@ export interface User {
 export interface Session {
     sessionId: number;
     createdAt: Date;
-    date: Date;
+    date: Date | string;
     hour: string;
     isFull: boolean;
     level: string;
