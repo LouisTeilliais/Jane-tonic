@@ -1,5 +1,13 @@
+export interface User {
+    email: string;
+    firstname: string;
+    lastname: string;
+    phoneNumber: string;
+}
+
+// Interface Session
 export interface Session {
-    sessionId: number,
+    sessionId: number;
     createdAt: Date;
     date: Date;
     hour: string;
@@ -11,8 +19,9 @@ export interface Session {
     updatedAt: string;
     sessionTypeId: number;
 
-    sessionType : {
+    sessionType: {
         sessionTypeId: number;
         sessionType: string;
-    }
-  }
+    };
+    users: User[];
+}

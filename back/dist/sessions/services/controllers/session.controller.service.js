@@ -30,9 +30,9 @@ let SessionControllerService = class SessionControllerService {
             return sessions;
         });
     }
-    getTopFiveSession() {
+    getIncomingSessions() {
         return __awaiter(this, void 0, void 0, function* () {
-            const sessions = yield this.sessionRepositoryService.findTopFiveSessions();
+            const sessions = yield this.sessionRepositoryService.findIncomingSessions();
             return sessions;
         });
     }

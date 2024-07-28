@@ -26,18 +26,42 @@ export default class SessionRepositoryService {
     }
 
     /**
-     * Get all sessions
-     */
-    public findTopFiveSessions(): Promise<Array<SessionEntity>>{
+     * Get all upcoming sessions
+    */
+    public findIncomingSessions(): Promise<Array<SessionEntity>>{
+        const currentDate = new Date(); // Date actuelle
+
+        // Définir le début et la fin de la journée actuelle
+        const startOfDay = new Date(currentDate);
+        startOfDay.setHours(0, 0, 0, 0);
+
+        const endOfDay = new Date(currentDate);
+        endOfDay.setHours(23, 59, 59, 999);
+
         return this.prismaService.session.findMany({
-            orderBy: {
-                date : 'desc'
+            where: {
+                OR: [
+                    {
+                        date: {
+                            gte: startOfDay, 
+                            lte: endOfDay 
+                        }
+                    },
+                    {
+                        date: {
+                            gt: endOfDay 
+                        }
+                    }
+                ]
             },
-            take: 5,
+            orderBy: {
+                date: 'asc'
+            },
             include: this.include
-        })
+        });
     }
 
+    
     /**
      * Get session by Id
      * @param sessionId 

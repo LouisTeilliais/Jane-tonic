@@ -5,6 +5,18 @@
     height: 4rem;
     margin-bottom: 2rem;
 }
+/* 
+@media (width< 400px) {
+    .navbar-container {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        height: 4rem;
+        width: 110%;
+        margin-bottom: 2rem;
+    }
+}
+   */
 
 .button-container {
     display: flex;

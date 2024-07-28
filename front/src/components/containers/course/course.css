@@ -13,12 +13,47 @@
 
 .img-course{
  height: 8rem;
+ width: 15rem;
 }
 
 .course-container {
  display: flex;
  justify-content: center;
 }
+
+@media (width< 400px) {
+    .img-course{
+        height: 6rem;
+        width: 10rem;
+    }
+
+    .course-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+/* 
+    .course-text {
+
+    } */
+    
+    /* .course-text p{
+        margin-bottom: 1rem;
+    } */
+    /* .text-container {
+        width: 33%;
+    }
+    .course-title{
+        font-family: 'Italic';
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+    .course-text{
+        font-family: 'Light';
+        margin-bottom: 1rem;
+    } */
+  }
+  
 
 .text-container {
  width: 33%;

@@ -5,14 +5,13 @@
 } */
 
 .body {
-    background-color: #fefefe;
-  }
-  
-  .container-top-image {
-    display: flex;
-    justify-content: center;
-  }
-  .top-image{
-    height: 18rem;
-  }
-  
+  background-color: #fefefe;
+}
+
+.container-top-image {
+  display: flex;
+  justify-content: center;
+}
+.top-image{
+  height: 18rem;
+}
