@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:14
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+# RUN npm run build
 
 EXPOSE 3001
 
