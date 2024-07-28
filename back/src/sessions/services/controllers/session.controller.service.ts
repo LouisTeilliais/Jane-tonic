@@ -13,8 +13,8 @@ export default class SessionControllerService {
         return sessions   
     }
 
-    async getTopFiveSession() : Promise<SessionEntity[]>{
-        const sessions = await this.sessionRepositoryService.findTopFiveSessions();
+    async getIncomingSessions() : Promise<SessionEntity[]>{
+        const sessions = await this.sessionRepositoryService.findIncomingSessions();
         
         return sessions   
     }

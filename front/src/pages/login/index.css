@@ -12,6 +12,18 @@
   /* box-shadow: 0.5px 0.5px 0.5px 0.5px; */
 }
 
+@media (width< 400px) {
+  .login-card{
+    width: 350px;
+    margin-left: 1rem;
+  }
+
+  .button-container{
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+
 .login-image {
   display: flex;
   justify-content: center;

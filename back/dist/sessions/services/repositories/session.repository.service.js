@@ -33,12 +33,31 @@ let SessionRepositoryService = class SessionRepositoryService {
             include: this.include
         });
     }
-    findTopFiveSessions() {
+    findIncomingSessions() {
+        const currentDate = new Date();
+        const startOfDay = new Date(currentDate);
+        startOfDay.setHours(0, 0, 0, 0);
+        const endOfDay = new Date(currentDate);
+        endOfDay.setHours(23, 59, 59, 999);
         return this.prismaService.session.findMany({
-            orderBy: {
-                date: 'desc'
+            where: {
+                OR: [
+                    {
+                        date: {
+                            gte: startOfDay,
+                            lte: endOfDay
+                        }
+                    },
+                    {
+                        date: {
+                            gt: endOfDay
+                        }
+                    }
+                ]
             },
-            take: 5,
+            orderBy: {
+                date: 'asc'
+            },
             include: this.include
         });
     }

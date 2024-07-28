@@ -31,9 +31,9 @@ let SessionController = class SessionController {
     constructor(sessionControllerService) {
         this.sessionControllerService = sessionControllerService;
     }
-    getTopFiveProjects() {
+    getIncomingSessions() {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.sessionControllerService.getTopFiveSession();
+            return this.sessionControllerService.getIncomingSessions();
         });
     }
     getAllProjects() {
@@ -62,7 +62,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], SessionController.prototype, "getTopFiveProjects", null);
+], SessionController.prototype, "getIncomingSessions", null);
 __decorate([
     (0, common_1.Get)(),
     (0, swagger_1.ApiBearerAuth)(),

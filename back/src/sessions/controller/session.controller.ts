@@ -11,8 +11,8 @@ export class SessionController {
 
     
     @Get('/next')
-    async getTopFiveProjects() {
-        return this.sessionControllerService.getTopFiveSession();
+    async getIncomingSessions() {
+        return this.sessionControllerService.getIncomingSessions();
     }
     
     @Get()

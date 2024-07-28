@@ -41,7 +41,7 @@ export default function Index() {
         text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
       />
       <Course
-        src='src/assets/courses/pilates.svg'
+        src='src/assets/courses/circuit-training.svg'
         title='Circuit training'
         text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
       />

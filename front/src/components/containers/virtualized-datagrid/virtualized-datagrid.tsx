@@ -1,48 +1,48 @@
-import { DataGridHeader, DataGridCell, DataGridHeaderCell } from '@fluentui/react-data-grid-react-window'
-import { Text, useScrollbarWidth, useFluent, makeStyles } from '@fluentui/react-components'
-import { Link } from 'react-router-dom'
-import { useRef, useState } from 'react'
-import { DataGrid, DataGridBody, DataGridRow } from '@fluentui-contrib/react-data-grid-react-window'
-import { useMount } from 'react-use'
-import classNames from 'classnames'
-import { IDLE, PENDING, REJECTED, RESOLVED } from '../../../requests/models/status'
-// import { Loader } from 'components/elements'
-import type { Status } from '../../../requests/models/status'
-import type { DataGridProps, TableColumnDefinition } from '@fluentui/react-components'
+import { DataGridHeader, DataGridCell, DataGridHeaderCell } from '@fluentui/react-data-grid-react-window';
+import { Text, useScrollbarWidth, useFluent, makeStyles } from '@fluentui/react-components';
+import { Link } from 'react-router-dom';
+import { useRef, useState } from 'react';
+import { DataGrid, DataGridBody, DataGridRow } from '@fluentui-contrib/react-data-grid-react-window';
+import { useMount } from 'react-use';
+import classNames from 'classnames';
+import { IDLE, PENDING, REJECTED, RESOLVED } from '../../../requests/models/status';
+// import { Loader } from 'components/elements';
+import type { Status } from '../../../requests/models/status';
+import type { DataGridProps, TableColumnDefinition } from '@fluentui/react-components';
 
 export type VirtualizedDatagridProps<T> = {
     /** Items */
-    items: Array<T>
+    items: Array<T>;
     /** Columns */
-    columns: Array<TableColumnDefinition<T>>
+    columns: Array<TableColumnDefinition<T>>;
     /** Height */
-    height?: number
+    height?: number;
     /** Page link */
-    pathLink?: (item: T) => string
+    pathLink?: (item: T) => string;
     /** Status */
-    status: Status
+    status: Status;
     /**
      * Whether the table is sortable
      * @default true
      */
-    sortable?: DataGridProps['sortable']
+    sortable?: DataGridProps['sortable'];
     /**
      * Enables column resizing
      * @default true
      */
-    resizableColumns?: DataGridProps['resizableColumns']
+    resizableColumns?: DataGridProps['resizableColumns'];
     /**
      * How focus navigation will work in the datagrid
      * @default 'row_unstable'
      */
-    focusMode?: DataGridProps['focusMode']
-} & Omit<DataGridProps, 'sortable' | 'resizableColumns' | 'focusMode' | 'items' | 'columns'>
+    focusMode?: DataGridProps['focusMode'];
+} & Omit<DataGridProps, 'sortable' | 'resizableColumns' | 'focusMode' | 'items' | 'columns'>;
 
 const useVirtualizedDatagridStyles = makeStyles({
     'is-odd': {
         backgroundColor: '#fafbfa',
     },
-})
+});
 
 /**
  * VirtualizedDatagrid
@@ -58,19 +58,19 @@ export default function VirtualizedDatagrid<T>({
     columns = [],
     ...props
 }: VirtualizedDatagridProps<T>) {
-    const { targetDocument } = useFluent()
-    const scrollbarWidth = useScrollbarWidth({ targetDocument })
-    const virtualizedDatagridStyles = useVirtualizedDatagridStyles()
+    const { targetDocument } = useFluent();
+    const scrollbarWidth = useScrollbarWidth({ targetDocument });
+    const virtualizedDatagridStyles = useVirtualizedDatagridStyles();
 
-    const ref = useRef<HTMLDivElement>(null)
+    const ref = useRef<HTMLDivElement>(null);
 
-    const [height, setHeight] = useState(500)
+    const [height, setHeight] = useState(500);
 
     useMount(() => {
         // Size of screen - (offset to top + distance component to top screen) - padding card - padding main - height header
-        const newHeight = window.innerHeight - (window.scrollY + (ref.current?.getBoundingClientRect().top ?? 0)) - 20 - 28 - 33
-        setHeight(newHeight > 500 ? newHeight : 500)
-    })
+        const newHeight = window.innerHeight - (window.scrollY + (ref.current?.getBoundingClientRect().top ?? 0)) - 20 - 28 - 33;
+        setHeight(newHeight > 500 ? newHeight : 500);
+    });
 
     return (
         <DataGrid
@@ -169,5 +169,5 @@ export default function VirtualizedDatagrid<T>({
                 </DataGridBody>
             )}
         </DataGrid>
-    )
+    );
 }

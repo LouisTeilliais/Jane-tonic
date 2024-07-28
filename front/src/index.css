@@ -1,5 +1,12 @@
 body {
   margin: 0;
+  /* display: flex; */
+}
+
+@media (width< 400px) {
+  body {
+    display: flex;
+  }
 }
 
 html {
