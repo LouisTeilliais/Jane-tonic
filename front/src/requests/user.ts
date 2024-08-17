@@ -8,8 +8,7 @@ export const postLogin = (
     password: string
 )=> {
     try {
-        return axios.post
-            (
+        return axios.post(
                 `http://localhost:5001/api/auth/login`,
                 {
                     email: email,
@@ -42,8 +41,7 @@ export const addUser = (
     sessionId: number
 ) => {
     try {
-        return axios.post
-            (
+        return axios.post(
                 `http://localhost:5001/api/user`,
                 {
                     firstname: firstname,

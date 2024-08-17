@@ -1,11 +1,10 @@
-// eslint-disable-next-line jsdoc/require-returns
 /**
  * Date handler
  * @param {Date=} date Date to used
  * @param {object} param param
  * @param {string=} param.locale locale
  */
-export default function Time(date, { locale = 'fr-FR' } = {}) {
+export default function Time(date: Date, { locale = 'fr-FR' } = {}) {
     if (!(date instanceof Date) || Number.isNaN(new Date(date).getTime()))
         throw new Error('Invalid date')
 
@@ -36,8 +35,7 @@ export default function Time(date, { locale = 'fr-FR' } = {}) {
             second = undefined,
             timeZoneName = undefined,
         } = {}) {
-            return date
-                .toLocaleDateString(locale, {
+            return date.toLocaleDateString(locale, {
                     weekday, era, year, month, day, hour, minute, second, timeZoneName,
                 })
                 .toLowerCase()
@@ -184,7 +182,6 @@ export default function Time(date, { locale = 'fr-FR' } = {}) {
          * @returns {string} DD/MM/YYYY
          */
         getStandardDateStringFromDate() {
-            // eslint-disable-next-line no-param-reassign
             locale = 'fr-FR'
             return this.getCleanDate({ year: 'numeric', month: '2-digit', day: '2-digit' })
         },
@@ -193,7 +190,6 @@ export default function Time(date, { locale = 'fr-FR' } = {}) {
          * @returns {number} Age
          */
         getAge() {
-            // eslint-disable-next-line no-param-reassign
             locale = 'fr-FR'
             return Math.abs(new Date(Date.now() - (date).getTime()).getUTCFullYear() - 1970)
         },

@@ -22,4 +22,4 @@ export async function getParams() {
         console.log(error);
         throw error;
     }
-};
+}

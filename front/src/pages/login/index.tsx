@@ -3,7 +3,7 @@ import logo from '../../../public/logo.png'
 import TextField from '../../components/inputs/text-field/text-field.component'
 import ButtonCustom from '../../components/inputs/button/button.component'
 import { postLogin } from '../../requests/user';
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -11,7 +11,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const onClickLogin = async (e: any) => {
+    const onClickLogin = async (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault(); // Empêche le rechargement de la page
         try {
             await postLogin(email, password);
@@ -23,7 +23,7 @@ export default function Login() {
 
     return (
         <div className={'container-login'}>
-            <form onSubmit={onClickLogin}>
+            <form onSubmit={() => onClickLogin}>
                 <div className={"login-card"}>
                     <div className={'login-image'}>
                         <img src={logo} alt="Logo" />

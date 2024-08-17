@@ -74,7 +74,6 @@ export default function VirtualizedDatagrid<T>({
 
     return (
         <DataGrid
-            // eslint-disable-next-line react/jsx-props-no-spreading
             {...props}
             columns={columns}
             ref={ref}
@@ -130,13 +129,6 @@ export default function VirtualizedDatagrid<T>({
                                 to={{
                                     pathname: pathLink(item as T),
                                 }}
-                                /* eslint-disable capitalized-comments */
-                                // onClick={ev => {
-                                //     const target = ev.target as HTMLElement
-                                //     if (target.closest('button') || target.nodeName.toLowerCase() === 'button')
-                                //         ev.preventDefault()
-                                // }}
-                                /* eslint-enable capitalized-comments */
                             >
                                 <DataGridRow
                                     key={rowId}

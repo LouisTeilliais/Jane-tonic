@@ -1,13 +1,18 @@
+import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({ children }: any) => {
+interface ProtectedRouteProps {
+    children: ReactNode;
+}
+
+const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
     const accessToken = sessionStorage.getItem('accessToken');
 
     if (!accessToken) {
         return <Navigate to="/login" />;
     }
 
-    return children;
+    return <>{children}</>;
 };
 
 export default ProtectedRoute;

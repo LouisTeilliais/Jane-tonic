@@ -53,6 +53,8 @@ export default function AdminIndex() {
     const [sessionTypes, setSessionTypes] = useState<{ sessionTypeId: number, sessionType: string }[]>([]);
     const [sessionTypeId, setSessionTypeId] = useState<number | null>(null);
 
+    console.log(isReadOnly)
+
     const handleSelectDate = (date: Date | null | undefined) => {
         setDate(date ?? null);
     };

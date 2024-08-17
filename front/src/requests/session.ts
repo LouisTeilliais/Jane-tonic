@@ -19,7 +19,7 @@ export async function getTopFiveSession() {
         console.log(error);
         throw error;
     }
-};
+}
 
 export async function getAllSession() {
     try {
@@ -39,8 +39,7 @@ export async function getAllSession() {
         console.log(error);
         throw error;
     }
-};
-
+}
 
 export async function upsertSession(session: Partial<Session>, sessionId: string) {
     try {
