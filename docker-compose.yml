@@ -1,36 +1,37 @@
 version: '3'
-
 services:
-  front:
+  jane-tonic-db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: wra4AJD.deeq
+      POSTGRES_DB: jane-tonic-db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  jane-tonic-front:
     build:
       context: ./front
     ports:
-      - "3000:3000" 
+      - "5173:5173"
     restart: always
 
-  back:
+  jane-tonic-back:
     build:
       context: ./back
     ports:
-      - "3001:3001" 
+      - "5001:5001"
     depends_on:
-      - db
+      - jane-tonic-db
     environment:
-      DATABASE_HOST: db
+      DATABASE_HOST: jane-tonic-db
       DATABASE_PORT: 5432
-      DATABASE_USER: user
+      DATABASE_USER: sa
       DATABASE_PASSWORD: wra4AJD.deeq
       DATABASE_NAME: jane-tonic-db
-    restart: always
-
-  db:
-    image: postgres:13
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: wra4AJD.deeq
-      POSTGRES_DB: jane-tonic-db
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
     restart: always
 
 volumes:
