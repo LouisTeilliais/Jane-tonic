@@ -8,7 +8,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api')
 
   app.enableCors({
-    origin: 'http://localhost:5173', // Origine autorisée.
+    origin: 'http://localhost:5001', // Origine autorisée.
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Méthodes HTTP autorisées.
     allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés.
     credentials: true // Autorise l'envoi de cookies et d'autres informations d'identification.
