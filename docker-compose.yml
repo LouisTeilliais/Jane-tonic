@@ -15,8 +15,12 @@ services:
   jane-tonic-front:
     build:
       context: ./front
+      args:
+        - NODE_ENV=production  
     ports:
       - "5173:5173"
+    env_file:
+      - ./front/.env.production  
     restart: always
 
   jane-tonic-back:

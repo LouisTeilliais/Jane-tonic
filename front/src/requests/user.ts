@@ -1,7 +1,6 @@
 import axios from "axios";
+import { BASE_URL } from "../types/other";
 
-
-// const baseUrl = process.env.APP_PORT
 
 export const postLogin = (
     email: string,
@@ -9,7 +8,7 @@ export const postLogin = (
 )=> {
     try {
         return axios.post(
-                `http://localhost:5001/api/auth/login`,
+                `${BASE_URL}auth/login`,
                 {
                     email: email,
                     password: password
@@ -42,7 +41,7 @@ export const addUser = (
 ) => {
     try {
         return axios.post(
-                `http://localhost:5001/api/user`,
+                `${BASE_URL}/api/user`,
                 {
                     firstname: firstname,
                     lastname: lastname,

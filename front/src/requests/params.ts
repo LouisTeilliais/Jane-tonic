@@ -1,7 +1,5 @@
 import axios from "axios";
-
-const API_BASE_URL = 'http://localhost:5001/api'
-
+import { BASE_URL } from "../types/other";
 
 export async function getParams() {
 
@@ -9,7 +7,7 @@ export async function getParams() {
     
     try {
         const response = await axios.get(
-            `${API_BASE_URL}/params`,
+            `${BASE_URL}params`,
             {
                 headers: {
                     "Content-Type": "application/json",

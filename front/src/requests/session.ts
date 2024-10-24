@@ -1,13 +1,12 @@
 import axios from "axios";
 import { Session } from "./models/session";
-import { NEW } from "../types/other";
+import { BASE_URL, NEW } from "../types/other";
 
-const API_BASE_URL = 'http://localhost:5001/api'
 
 export async function getTopFiveSession() {
     try {
         const response = await axios.get(
-            `${API_BASE_URL}/sessions/next`,
+            `${BASE_URL}sessions/next`,
             {
                 headers: {
                     "Content-Type": "application/json",
@@ -26,7 +25,7 @@ export async function getAllSession() {
         const token = sessionStorage.getItem('accessToken');
 
         const response = await axios.get(
-            `${API_BASE_URL}/sessions`,
+            `${BASE_URL}sessions`,
             {
                 headers: {
                     "Content-Type": "application/json",
@@ -50,14 +49,14 @@ export async function upsertSession(session: Partial<Session>, sessionId: string
         }
 
         const response = sessionId !== NEW
-            ? await axios.put(`${API_BASE_URL}/sessions/${sessionId}`, session,
+            ? await axios.put(`${BASE_URL}sessions/${sessionId}`, session,
                 {
                     headers: {
                         "Content-Type": "application/json",
                         "Authorization": `Bearer ${token}`
                     },
                 }) 
-            : await axios.post(`${API_BASE_URL}/sessions`, session, 
+            : await axios.post(`${BASE_URL}sessions`, session, 
                 {
                     headers: {
                         "Content-Type": "application/json",
@@ -83,7 +82,7 @@ export const getSessionById = async (sessionId: string) => {
         }
 
         const response = await axios.get(
-            `${API_BASE_URL}/sessions/${sessionId}`,
+            `${BASE_URL}sessions/${sessionId}`,
             {
                 headers: {
                     "Content-Type": "application/json",
@@ -108,7 +107,7 @@ export const deleteSession = async(sessionId: string) => {
         }
 
         const response = await axios.delete(
-            `${API_BASE_URL}/sessions/${sessionId}`,
+            `${BASE_URL}sessions/${sessionId}`,
             {
                 headers: {
                     "Content-Type": "application/json",

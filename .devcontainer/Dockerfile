@@ -33,6 +33,10 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesourc
 RUN sudo apt-get update 
 RUN sudo apt-get install nodejs -y
 
+ARG NODE_ENV=production
+ENV NODE_ENV=$NODE_ENV
+
+COPY .env.${NODE_ENV} .env
 
 # Install nest & prisma
 RUN sudo npm install -g @nestjs/cli
