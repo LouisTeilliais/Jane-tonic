@@ -8,12 +8,12 @@ async function bootstrap() {
   app.setGlobalPrefix('api')
 
   app.enableCors({
-    origin: '*', // Origine autorisée.
+    origin: ['https://janetonic.fr', 'https://api.janetonic.fr'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Méthodes HTTP autorisées.
     allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés.
     credentials: true // Autorise l'envoi de cookies et d'autres informations d'identification.
   });
-  
+ 
   const config = new DocumentBuilder()
     .setTitle('Jane Tonic')
     .setDescription('The Jane Tonic API description')
