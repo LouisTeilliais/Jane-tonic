@@ -22,7 +22,8 @@
 .session-collec-1h .title, .session-collec-1h, .session-collec-1h #titre-pilates {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    font-weight: bolder;
 }
 
 .session-collec-1h #liste-prix-séances-circuit, .session-collec-1h #liste-prix-séances-pilates {
@@ -69,7 +70,9 @@
 
 .cours-partic-dom-1h .titre, .cours-partic-dom-1h #subtitles{
     text-align: center;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-weight: bolder;
+
 }
 
 .cours-partic-dom-1h #liste-prix-séances {
@@ -152,4 +155,10 @@
     flex-direction: column;
     align-items: center;
     width: 35%;
+    font-size: smaller;
+
+    p {
+        margin-top: 1rem;
+        font-weight: 400;
+    }
 }

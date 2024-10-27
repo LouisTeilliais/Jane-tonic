@@ -13,17 +13,15 @@ export default function Coach(): ReactElement {
             <img className="coach-img" src="src/assets/prof.png" alt="" />
             <br />
             <div className="text-container-coach">
-                <p> <b>CPQ</b> Certificat de qualifications professionnelles </p>
-                <p>
-                    Animateur de loisir sportif
-                </p>
-                <p> <b> AGEE </b> Activitée gymnique d’entretien et d’expression </p>
+                <p> Certificat instructeur Pilates <b>Matwork 1 & 2</b></p>
+                <p> Certificat instructeur Pilates Adaptation femmes </p>
+                <p> enceintes, seniors et post thérapie </p>
             </div>
             <br />
             <div className="text-container-coach">
-                <p> Certificat instructeur Pilates Matwork 2 </p>
-                <p> Certificat instructeur Pilates Adaptation femmes </p>
-                <p> enceintes, seniors et post thérapie </p>
+                <b> Certificat de qualification professionnelle </b>
+                <p> Animateur de loisirs sportifs</p>
+                <p> Activité gymnique d’entretien et d’expression </p>
             </div>
         </div>
         </>

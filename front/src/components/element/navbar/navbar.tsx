@@ -21,14 +21,6 @@ export default function Navbar() : ReactElement {
                     CONTACT
                 </a>
             </div>
-            {/* <div className="logo-container">
-                <a>
-                    <img src="src/assets/fb.svg" alt="" />
-                </a>
-                <a>
-                    <img src="src/assets/insta.svg" alt="" />
-                </a>
-            </div> */}
         </div>
     )
 }

@@ -3,7 +3,7 @@ import './course.css'
 
 
 
-type WorkoutTitle = "Pilates" | "Circuit training" | "Stretching";
+type WorkoutTitle = "Pilates" | "Circuit training" | "Stretching & mobilité";
 
 export interface CourseProps {
     src: string
@@ -22,7 +22,7 @@ export default  function Course({src, title, text} : CourseProps): ReactElement{
         case "Circuit training":
           color = "#0069b4";
           break;
-        case "Stretching":
+        case "Stretching & mobilité":
           color = "#e72f73";
           break;
         default:

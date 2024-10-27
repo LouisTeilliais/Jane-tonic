@@ -9,7 +9,7 @@ export default function Footer() : ReactElement {
             <div className="contact-container">
                 <h3>Contact</h3>
                 <p>Eugénie Bardoux</p>
-                <p>Coach sportif, cours particulier et collectif</p>
+                <p>Educateur sportif, cours particulier et collectif</p>
                 <p>à Capbreton, Seignosse, Hossegor, Labenne, Ondres</p>
             </div>
             <div className="contact-container">

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     background-color: black;
-    height: 4rem;
+    height: 3rem;
     margin-bottom: 2rem;
 }
 /* 
@@ -29,7 +29,8 @@
 a {
     color: white; /* Couleur du lien */
     text-decoration: none; /* Supprimer le soulignement par défaut */
-    margin-right: 1rem;
+    margin-right: 3rem;
+    font-size: 15px;
 }
 
 a:hover {

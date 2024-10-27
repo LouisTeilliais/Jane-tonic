@@ -36,19 +36,20 @@ export default function Index() {
       <Diary sessions={sessions} />
       <Separation id='course' title="Les cours" />
       <Course
-        src='src/assets/courses/pilates.svg'
-        title='Pilates'
-        text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
-      />
-      <Course
-        src='src/assets/courses/circuit-training.svg'
+        src='src/assets/courses/circuit_training_capbreton_ok.svg'
         title='Circuit training'
-        text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
+        text="Ensemble d'exercices de renforcement musculaire et cardiovasculaire proposés sous forme d'ateliers visant à améliorer et/ou entretenir une bonne condition physique."
+
       />
       <Course
-        src='src/assets/courses/stretching.svg'
-        title='Stretching'
-        text="Ensemble d'exercices physiques visant au renforcement des muscles centraux et au bon équilibre du corps."
+        src='src/assets/courses/pilates_capbreton_ok.svg'
+        title='Pilates'
+        text="Ensemble d'exercices physiques visant à améliorer la posture, le bon équilibre du corps et à renforcer les muscles centraux."
+      />
+      <Course
+        src='src/assets/courses/stretching_capbreton_ok.svg'
+        title='Stretching & mobilité'
+        text="Ensemble d'exercices visant à améliorer la liberté de mouvement, la mobilité articulaire, l'équilibre et la souplesse."
       />
       <Separation id='tarifs' title="Tarifs" />
       <Tarifs />

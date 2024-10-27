@@ -17,7 +17,7 @@ function bootstrap() {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
         app.setGlobalPrefix('api');
         app.enableCors({
-            origin: '*',
+            origin: ['http://localhost:5001/api'],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
             allowedHeaders: ['Content-Type', 'Authorization'],
             credentials: true

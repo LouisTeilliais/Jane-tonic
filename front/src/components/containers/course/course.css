@@ -11,14 +11,15 @@
 }
 
 
-.img-course{
+/* .img-course{
  height: 8rem;
  width: 15rem;
-}
+} */
 
 .course-container {
  display: flex;
  justify-content: center;
+ margin-top: 1rem;
 }
 
 @media (width< 400px) {
@@ -60,13 +61,15 @@
 }
 
 .course-title{
- font-family: 'Italic';
- margin-bottom: -0.5rem;
- margin-top: 0;
+ font-weight: 800;
+ font-family: 'Light';
+ margin-bottom: -3px;
+ margin-top: 1rem;
 }
 
 .course-text{
+    font-weight: 400;
     font-family: 'Light';
-    margin-bottom: -1rem;
-   }
-   
+    /* margin-bottom: -1rem; */
+}
+

@@ -6,7 +6,7 @@ export default function Tarifs() {
             <div className="session-collec-1h">
                 <h2 className="title">Cours collectif 1h</h2>
                 <div>
-                    <h3 id="subtitles">Circuit training fitness & Streching</h3>
+                    <h3 id="subtitles">Extérieur</h3>
                     <div className='container'>
                         <div className='prices-container'>
                             <p className='text-sessions'>
@@ -34,7 +34,7 @@ export default function Tarifs() {
                         </div>
                     </div>
                     <p></p>
-                    <h3 className="title">Pilates</h3>
+                    <h3 className="title">Intérieur</h3>
                     <div className='container'>
                         <div className='prices-container'>
                             <p className='text-sessions'>
@@ -66,7 +66,7 @@ export default function Tarifs() {
             <div className="cours-partic-dom-1h">
                 <h2 className="titre">Cours particulier domicile 1h</h2>
                 <div>
-                    <h3 id="subtitles">Circuit training fitness, Streching & pilates</h3>
+                    {/* <h3 id="subtitles">Circuit training fitness, Streching & pilates</h3> */}
                     <div className='container'>
                         <div className='prices-container-black'>
                             <p className='text-sessions'>
@@ -88,7 +88,7 @@ export default function Tarifs() {
                     <div className='container'>
                         <div className='container-rules'>
                             <p>
-                                Les cours particuliers à domicile peuvent être réglés en <b>SESU</b>, vous bénéficierez alors d'une réduction 50% de la totalité du montant sur votre prochaine échéance d'impôts.
+                                Les cours particuliers à domicile peuvent être réglés en <b>CESU</b>, vous bénéficierez alors d'une réduction 50% de la totalité du montant sur votre prochaine échéance d'impôts.
                             </p>
                         </div>
                     </div>
