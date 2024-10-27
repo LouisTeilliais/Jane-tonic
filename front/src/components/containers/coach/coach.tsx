@@ -21,7 +21,7 @@ export default function Coach(): ReactElement {
             </div>
             <br />
             <div className="text-container-coach">
-                <p> Certificat instructeur Pilates Matwork 1 </p>
+                <p> Certificat instructeur Pilates Matwork 2 </p>
                 <p> Certificat instructeur Pilates Adaptation femmes </p>
                 <p> enceintes, seniors et post thérapie </p>
             </div>
