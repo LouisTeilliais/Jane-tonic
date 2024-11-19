@@ -8,7 +8,8 @@ async function bootstrap() {
   app.setGlobalPrefix('api')
 
   app.enableCors({
-    origin: ['http://localhost:5173, "https://janetonic.fr'], // URL FRONT
+    // origin: ['http://localhost:5173'], // URL FRONT
+    origin: ['https://janetonic.fr', 'https://api.janetonic.fr'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization'], 
   });
