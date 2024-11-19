@@ -29,6 +29,10 @@ export default function Index() {
   return (
     <>
       <Navbar />
+      <br />
+      <br /> 
+      <br /> 
+      <br /> 
       <div className='container-top-image'>
         <img className='top-image' src='src/assets/logo.png' alt='Top' />
       </div>

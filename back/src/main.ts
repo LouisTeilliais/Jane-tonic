@@ -8,10 +8,9 @@ async function bootstrap() {
   app.setGlobalPrefix('api')
 
   app.enableCors({
-    origin: ['http://localhost:5001/api'], 
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Méthodes HTTP autorisées.
-    allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés.
-    credentials: true // Autorise l'envoi de cookies et d'autres informations d'identification.
+    origin: ['http://localhost:5173'], // URL FRONT
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
   });
  
   const config = new DocumentBuilder()

@@ -12,31 +12,31 @@ services:
       - postgres_data:/var/lib/postgresql/data
     restart: always
 
-  jane-tonic-front:
-    build:
-      context: ./front
-      args:
-        - NODE_ENV=production  
-    ports:
-      - "5173:5173"
-    env_file:
-      - ./front/.env.production  
-    restart: always
+  # jane-tonic-front:
+  #   build:
+  #     context: ./front
+  #     args:
+  #       - NODE_ENV=production  
+  #   ports:
+  #     - "5173:5173"
+  #   env_file:
+  #     - ./front/.env.production  
+  #   restart: always
 
-  jane-tonic-back:
-    build:
-      context: ./back
-    ports:
-      - "5001:5001"
-    depends_on:
-      - jane-tonic-db
-    environment:
-      DATABASE_HOST: jane-tonic-db
-      DATABASE_PORT: 5432
-      DATABASE_USER: sa
-      DATABASE_PASSWORD: wra4AJD.deeq
-      DATABASE_NAME: jane-tonic-db
-    restart: always
+  # jane-tonic-back:
+  #   build:
+  #     context: ./back
+  #   ports:
+  #     - "5001:5001"
+  #   depends_on:
+  #     - jane-tonic-db
+  #   environment:
+  #     DATABASE_HOST: jane-tonic-db
+  #     DATABASE_PORT: 5432
+  #     DATABASE_USER: sa
+  #     DATABASE_PASSWORD: wra4AJD.deeq
+  #     DATABASE_NAME: jane-tonic-db
+  #   restart: always
 
 volumes:
   postgres_data:

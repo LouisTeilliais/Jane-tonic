@@ -17,10 +17,9 @@ function bootstrap() {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
         app.setGlobalPrefix('api');
         app.enableCors({
-            origin: ['http://localhost:5001/api'],
+            origin: ['http://localhost:5173'],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
             allowedHeaders: ['Content-Type', 'Authorization'],
-            credentials: true
         });
         const config = new swagger_1.DocumentBuilder()
             .setTitle('Jane Tonic')

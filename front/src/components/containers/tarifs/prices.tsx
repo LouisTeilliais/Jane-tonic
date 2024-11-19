@@ -6,7 +6,7 @@ export default function Tarifs() {
             <div className="session-collec-1h">
                 <h2 className="title">Cours collectif 1h</h2>
                 <div>
-                    <h3 id="subtitles">Extérieur</h3>
+                    <h3 className="title">Extérieur</h3>
                     <div className='container'>
                         <div className='prices-container'>
                             <p className='text-sessions'>
@@ -62,11 +62,9 @@ export default function Tarifs() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="cours-partic-dom-1h">
-                <h2 className="titre">Cours particulier domicile 1h</h2>
+                <br />
+                <h2 className="title">Cours particulier domicile 1h</h2>
                 <div>
-                    {/* <h3 id="subtitles">Circuit training fitness, Streching & pilates</h3> */}
                     <div className='container'>
                         <div className='prices-container-black'>
                             <p className='text-sessions'>
@@ -92,11 +90,6 @@ export default function Tarifs() {
                             </p>
                         </div>
                     </div>
-                    {/* <ul id="liste-prix-séances">
-                        <li id="prix-séance-domicile" ><span>1 séance SOLO</span> <strong>50 euros</strong></li>
-                        <li id="prix-séance-domicile"><span>1 séance DUO</span> <strong>70 euros</strong></li>
-                    </ul>
-                    <h5 id="reglement-domicile">Les cours particuliers à domicile peuvent être réglés en SESU, vous bénéficierez d'une réduction 50% de la totalité du montant sur votre prochaine échéance d'impôts.</h5> */}
                 </div>
             </div>
         </div>

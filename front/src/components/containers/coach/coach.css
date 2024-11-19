@@ -32,7 +32,17 @@ h2 {
         font-weight: 400;
     }
     /* font-size: 15px; */
+
 }
+
+.container-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 75%;
+    align-items: center;
+}
+
 
 p {
     margin: 0;

@@ -41,7 +41,7 @@ export const addUser = (
 ) => {
     try {
         return axios.post(
-                `${BASE_URL}/user`,
+                `${BASE_URL}user`,
                 {
                     firstname: firstname,
                     lastname: lastname,
