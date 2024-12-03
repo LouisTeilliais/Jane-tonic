@@ -14,7 +14,7 @@ export default function Footer() : ReactElement {
             </div>
             <div className="contact-container">
                 <p> +33 (0)6 71 16 38 11</p>
-                <p> coucou@janetonic.fr</p>
+                <p> eugenie.bardoux@gmail.com </p>
             </div>
         </div>
     )
