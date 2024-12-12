@@ -20,4 +20,20 @@ h1 {
  height: 4px;
  border-radius: 10px;
  width: 40%;
+ 
+}
+
+@media (max-width: 450px) {
+  .title-separation {
+    gap: 3px;
+  }
+
+  .title-bar {
+    width: 26%;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
 }

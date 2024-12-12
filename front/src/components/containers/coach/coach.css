@@ -47,3 +47,17 @@ h2 {
 p {
     margin: 0;
 }
+
+@media (width < 450px) {
+
+    .container-coach {
+        margin-left: -7rem;
+    }
+    .coach-img {
+        height: 12rem;
+    }
+
+    .container-text {
+        width: 100%;
+    }
+}

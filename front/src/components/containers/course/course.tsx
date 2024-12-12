@@ -32,10 +32,10 @@ export default  function Course({src, title, text} : CourseProps): ReactElement{
 
     return (
         <div className='course-container'>
-          <div>
-            <img
-              className='img-course' 
-              src={src}/>
+          <div className='img-container'>
+              <img
+                className='img-course' 
+                src={src}/>
           </div>
           <div className='text-container'>
             <h1 className='course-title' style={{color: color}}>{title}</h1>

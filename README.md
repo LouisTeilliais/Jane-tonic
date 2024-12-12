@@ -1,4 +1,16 @@
 # Jane-tonic
 
+## Deploy 
 
-https://medium.com/@bruceguenkam/how-to-create-authentication-system-with-jwt-using-nestjs-and-prisma-e803d899a7a7
+On the ubuntu server : 
+
+docker compose up 
+
+
+## Update 
+
+docker compose down
+docker rmi $(docker images -q)
+docker system prune
+git pull 
+docker compose up

@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Light";   /*Can be any text*/
+    font-family: "Light";   
     src: local("Nunito"),
           url("src/assets/fonts/Nunito.ttf") format("truetype");
 
@@ -48,14 +48,14 @@
 
 .session-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit span, .session-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates span {
     display: inline-block;
-    text-align: left; /* Aligner le texte des séances à gauche */
-    margin-right: 40%; /* Décaler le texte des séances vers la gauche */
+    text-align: left;
+    margin-right: 40%; 
 }
 
 .session-collec-1h #liste-prix-séances-circuit #prix-séance-collective-circuit strong, .session-collec-1h #liste-prix-séances-pilates #prix-séance-collective-pilates strong{
     display: inline-block;
-    text-align: right; /* Aligner le texte des prix à droite */
-    margin-left: 40%; /* Décaler le texte des prix vers la droite */
+    text-align: right; 
+    margin-left: 40%; 
 }
 
 
@@ -73,20 +73,12 @@
     text-align: center;
     font-weight: bold;
     margin-bottom: 1rem;
-    /* font-weight: bolder !important; */
 }
 
 .cours-partic-dom-1h h2.title {
     font-family: 'Light';
-    /* font-family: 'Light', sans-serif !important;
-    font-weight: bolder !important; */
 }
 
-
-/* .test {
-    font-family: 'Light', sans-serif !important;
-    font-weight: bold !important;
-} */
 
 .cours-partic-dom-1h #liste-prix-séances {
     text-align: center;
@@ -173,5 +165,31 @@
     p {
         margin-top: 1rem;
         font-weight: 400;
+    }
+}
+
+@media (width < 450px) {
+    .session-collec-1h {
+        margin-left: -8rem;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    #cours-part {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .container-rules p{
+        font-size: 14px;
     }
 }

@@ -63,7 +63,7 @@ export default function Tarifs() {
                     </div>
                 </div>
                 <br />
-                <h2 className="title">Cours particulier domicile 1h</h2>
+                <h2 className="title" id='cours-part'>Cours particulier domicile 1h</h2>
                 <div>
                     <div className='container'>
                         <div className='prices-container-black'>

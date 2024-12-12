@@ -22,37 +22,28 @@
  margin-top: 1rem;
 }
 
-@media (width< 400px) {
+@media (width < 450px) {
+    
+    .img-container{
+        display: flex;
+        align-items: center;
+    }
+    
     .img-course{
-        height: 6rem;
-        width: 10rem;
+        height: 5rem;
+        width: 9rem;
     }
 
     .course-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
+        margin-left: -10rem;
     }
-/* 
-    .course-text {
 
-    } */
-    
-    /* .course-text p{
-        margin-bottom: 1rem;
-    } */
-    /* .text-container {
-        width: 33%;
-    }
-    .course-title{
-        font-family: 'Italic';
-        margin-bottom: 0.5rem;
-        margin-top: 0;
+    .course-title {
+        font-size: 26px;
     }
     .course-text{
-        font-family: 'Light';
-        margin-bottom: 1rem;
-    } */
+        font-size: 13px;
+    }
   }
   
 
