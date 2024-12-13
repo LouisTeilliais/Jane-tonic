@@ -6,7 +6,7 @@ body {
 @media (width < 450px) {
   body {
       display: flex;
-      margin-right: -6rem;
+      margin-right: -7rem;
   }
 }
 

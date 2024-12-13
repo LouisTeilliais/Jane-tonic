@@ -17,7 +17,7 @@ function bootstrap() {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
         app.setGlobalPrefix('api');
         app.enableCors({
-            origin: ['http://localhost:5173'],
+            origin: ['https://janetonic.fr', 'https://api.janetonic.fr'],
             methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
             allowedHeaders: ['Content-Type', 'Authorization'],
         });
