@@ -1,7 +1,21 @@
 {
     "name": "app_jane_tonic",
     "dockerComposeFile": "docker-compose.yml",
-    "service": "app_jane_tonic",
-    "workspaceFolder": "/app_jane_tonic"
-    // "postCreateCommand": "bash .devcontainer/init.sh"
+    "service": "app_jane_tonic_container",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "npm install && npm run build",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "prisma.prisma",
+                "mikestead.dotenv"
+            ]
+        }
+    },
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+    }
 }

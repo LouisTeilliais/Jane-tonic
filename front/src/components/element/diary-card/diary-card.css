@@ -5,20 +5,21 @@
     background-color: #30b4a6;
     color: white;
     border-radius: 20px 10px 10px 10px;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 450px) {
     .container-card {
         display: flex ;
         height: 10rem;
-        width: 60%;
+        width: 90%;
         background-color: #30b4a6;
         color: white;
         border-radius: 20px 10px 10px 10px;
     }    
 
     .container-date {
-        width: 30% !important;
+        width: 35% !important;
     }
 
     p {
@@ -31,6 +32,10 @@
 
     .date-day {
         margin-top: 2rem !important;
+    }
+
+    .button-reservation-container {
+        margin-top: 0.25rem !important;
     }
     
 }
@@ -110,7 +115,8 @@ button {
 }
 
 .user-info-container {
-    color: black
+    color: black;
+    margin-top: 2rem;
 }
 
 
@@ -121,19 +127,20 @@ button {
 .input-user-container {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .input-user-container input {
     width: 15rem;
     border-radius: 10px;
     border: none;
-    margin-top: -0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .button-reservation-container {
     display: flex;
     justify-content: flex-end;
-    margin-top: -2rem;
+    margin-top: -0.5rem;
     margin-right: 0.5rem;
 }
 
@@ -148,6 +155,12 @@ button {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
+}
+
+.close-card {
+    background-color: white !important;
+    color: black !important;
+    margin-right: 0.5rem;
 }
 
 @media (width < 450px) {

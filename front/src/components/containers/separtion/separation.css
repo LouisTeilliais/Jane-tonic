@@ -5,35 +5,55 @@
 }
   
 
-h1 {
+/* h1 {
  font-family: 'Medium';
  font-size: 3rem; 
-}
+} */
 
-.title-separation {
+/* .title-separation {
  display: flex;
  align-items: center;
+ justify-content: center; 
+ width: 100%;
+ box-sizing: border-box;
+ gap: 1rem;
+} */
+
+.title-separation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; 
+  box-sizing: border-box; 
+  gap: 1rem; 
 }
+
+.title-section {
+  font-family: 'Medium';
+  font-size: 3rem; 
+  white-space: nowrap; 
+  text-align: center; 
+}
+
   
 .title-bar {
  background-color: black;
  height: 4px;
  border-radius: 10px;
  width: 40%;
- 
 }
+
 
 @media (max-width: 450px) {
   .title-separation {
-    gap: 3px;
+    gap: 0.5rem; 
   }
 
   .title-bar {
-    width: 26%;
-    margin: 0;
+    height: 3px; 
   }
 
-  h1 {
-    font-size: 1.75rem;
+  .title-section {
+    font-size: 1.75rem; 
   }
 }

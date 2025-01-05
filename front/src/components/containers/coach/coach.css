@@ -50,11 +50,12 @@ p {
 
 @media (width < 450px) {
 
-    .container-coach {
-        margin-left: -7rem;
-    }
     .coach-img {
         height: 12rem;
+    }
+
+    .text-container-coach {
+        width: 60%;
     }
 
     .container-text {

@@ -65,6 +65,17 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
     }
   };
 
+  const resetCard = () => {
+    setIsReserved(false);
+    setReservationSuccess(false);
+    setLastName('');
+    setFirstName('');
+    setPhone('');
+    setEmail('');
+    setErrorMessage('');
+  };
+  
+
   return (
     <>
       <div 
@@ -80,8 +91,6 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
           <p className="date-month">{month}</p>
           {isReserved && !reservationSuccess && (
             <>
-              <br />
-              <br />
               <div className='user-info-container'>
                 <p>Nom</p>
                 <p>Prénom</p>
@@ -110,8 +119,6 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
           </div>
           {isReserved && !reservationSuccess && (
             <>
-              <br />
-              <br />
               <form onSubmit={handleReservation} className='input-user-container'>
                 <input 
                   type="text" 
@@ -121,7 +128,6 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
                   required
                   onChange={(e) => setLastName(e.target.value)}
                 />
-                <br />
                 <input 
                   type="text" 
                   name="firstname" 
@@ -130,7 +136,6 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
                   required
                   onChange={(e) => setFirstName(e.target.value)}
                 />
-                <br />
                 <input 
                   type="email" 
                   name="email" 
@@ -139,7 +144,6 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
                   required
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <br />
                 <input 
                   type="tel" 
                   name="phoneNumber" 
@@ -148,13 +152,19 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
                   required
                   onChange={(e) => setPhone(e.target.value)}
                 />
-                <br />
                 {errorMessage && (
                   <div className="error-message-container" style={{ color: 'red' }}>
                     <p className="error-message">{errorMessage}</p>
                   </div>
                 )}
                 <div className='button-reservation-container'>
+                  <button
+                    type="button" 
+                    onClick={resetCard}
+                    className='close-card'
+                  >
+                    ANNULER
+                  </button>
                   <button
                     type="submit"
                     disabled={session.isFull}
@@ -172,7 +182,6 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
           )}
         </div>
       </div>
-      <br />
     </>
   );
 }

@@ -10,7 +10,7 @@ export default  function Separation({id, title}: SeparationProps) : ReactElement
     return (
         <div id={id} className='title-separation'>
             <hr className='title-bar'/>
-                <h1>
+                <h1 className='title-section' >
                     {title}
                 </h1>
             <hr className='title-bar'/>

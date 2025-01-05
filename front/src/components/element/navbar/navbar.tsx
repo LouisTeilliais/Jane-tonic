@@ -4,20 +4,20 @@ import './navbar.css'
 export default function Navbar() : ReactElement {
     return (
         <div className="navbar-container">
-            <div className="button-container">
-                <a href="#agenda">
+            <div className="navbar-button-container">
+                <a className="link-nav" href="#agenda">
                     L'AGENDA
                 </a>
-                <a href="#course">
+                <a className="link-nav" href="#course">
                     LES COURS
                 </a>
-                <a href="#tarifs">
+                <a className="link-nav" href="#tarifs">
                     TARIFS
                 </a>
-                <a href="#coach">
+                <a className="link-nav" href="#coach">
                     LA COACH
                 </a>
-                <a href="#contact">
+                <a className="link-nav" href="#contact">
                     CONTACT
                 </a>
             </div>

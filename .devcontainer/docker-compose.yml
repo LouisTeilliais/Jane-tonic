@@ -1,35 +1,33 @@
-version: '3'
+version: '3.8'
 
 services: 
-    # app_jane_tonic_container:
-    # build:
-    #   context: ./
-    #   dockerfile: ./Dockerfile
-    #   args:
-    #       - NODE_ENV=${NODE_ENV:-production}
-    # env_file:
-    #   - .env.${NODE_ENV:-production}
-    # stdin_open: true
-    # tty: true
-    # volumes:
-    #   - ../:/app_jane_tonic:rw
-    #   - ~/.ssh:/.ssh
-    #   - /etc/timezone:/etc/timezone:ro
-    #   - /etc/localtime:/etc/localtime:ro
-    # ports:
-    #   - '5000:5000'
-    # networks:
-    #   - jane_tonic_network
+  app_jane_tonic_container:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - ./front/.env
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/workspace:rw
+    ports:
+      - '5000:5000'
+      - "5001:5001"
+    networks:
+      - jane_tonic_network
 
-    db: 
-      image: postgres:latest
-      environment:
-        POSTGRES_USER: sa
-        POSTGRES_PASSWORD: Your_password123
-      ports:
-        - '5432:5432'
-      networks:
-        - jane_tonic_network
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: Your_password123
+    ports:
+      - '5432:5432'
+    env_file:
+      - ./back/.env
+    networks:
+      - jane_tonic_network
 
 networks:
   jane_tonic_network:

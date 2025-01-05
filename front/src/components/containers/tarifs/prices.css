@@ -169,9 +169,6 @@
 }
 
 @media (width < 450px) {
-    .session-collec-1h {
-        margin-left: -8rem;
-    }
 
     h2 {
         font-size: 20px;
@@ -189,7 +186,19 @@
         font-size: 15px;
     }
 
+    .container-rules {
+        width: 60%;
+    }
+
     .container-rules p{
         font-size: 14px;
+    }
+
+    .prices-container {
+        width: 70% !important;
+    }
+
+    .prices-container-black{
+        width: 70% !important;
     }
 }

@@ -3,11 +3,11 @@
 }
 
 @media (width < 450px) {
-  .container-top-image {
+  /* .container-top-image {
       margin-left: -7rem;
-  }
+  } */
   .top-image{
-    height: 15rem !important;
+    height: 14rem !important;
   }
 
   
