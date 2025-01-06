@@ -8,8 +8,8 @@ services:
       POSTGRES_DB: jane-tonic-db
     ports:
       - '5432:5432'
-    env_file:
-      - ./back/.env.production  
+    # env_file:
+    #   - ./back/.env.production  
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
