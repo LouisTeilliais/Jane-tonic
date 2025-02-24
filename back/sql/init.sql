@@ -7,6 +7,6 @@ INSERT INTO session_type ("sessionTypeId", session_type)
 VALUES 
     (1, 'Pilates'),
     (2, 'Circuit training'),
-    (3, 'Stretching'),
+    (3, 'Stretching & mobilité'),
     (4, 'Run & break'), 
     (5, 'Apéro(s)port'); 

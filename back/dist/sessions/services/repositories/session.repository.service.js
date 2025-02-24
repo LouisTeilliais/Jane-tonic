@@ -37,23 +37,11 @@ let SessionRepositoryService = class SessionRepositoryService {
         const currentDate = new Date();
         const startOfDay = new Date(currentDate);
         startOfDay.setHours(0, 0, 0, 0);
-        const endOfDay = new Date(currentDate);
-        endOfDay.setHours(23, 59, 59, 999);
         return this.prismaService.session.findMany({
             where: {
-                OR: [
-                    {
-                        date: {
-                            gte: startOfDay,
-                            lte: endOfDay
-                        }
-                    },
-                    {
-                        date: {
-                            gt: endOfDay
-                        }
-                    }
-                ]
+                date: {
+                    gte: startOfDay,
+                }
             },
             orderBy: {
                 date: 'asc'
@@ -126,6 +114,14 @@ let SessionRepositoryService = class SessionRepositoryService {
             if (!session) {
                 return null;
             }
+            yield this.prismaService.user.updateMany({
+                where: {
+                    sessionId
+                },
+                data: {
+                    sessionId: null
+                }
+            });
             return this.prismaService.session.delete({
                 where: {
                     sessionId

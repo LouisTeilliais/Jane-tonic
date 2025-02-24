@@ -37,6 +37,18 @@
     .button-reservation-container {
         margin-top: 0.25rem !important;
     }
+
+    .title-card{
+        font-size: 30px !important;
+    }
+
+    .container-info-top {
+        margin-top: 0.5rem !important;
+    }
+
+    .user-info-container {
+        margin-top: 2.5rem !important;
+    }
     
 }
 
@@ -84,6 +96,7 @@ p {
 
 .container-info-middle {
     margin-left: 1rem;
+    min-height: 133px;
 }
 
 .place-card {
@@ -91,7 +104,7 @@ p {
 }
 
 .title-card {
-    font-size: xxx-large;
+    font-size: 40px;
 }
 
 .level-card {
@@ -127,7 +140,6 @@ button {
 .input-user-container {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
 }
 
 .input-user-container input {
@@ -164,7 +176,5 @@ button {
 }
 
 @media (width < 450px) {
-    .title-card{
-        font-size: 40px;
-    }
+    
 }

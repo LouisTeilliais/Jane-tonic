@@ -1,21 +1,21 @@
 version: '3.8'
 
 services: 
-  app_jane_tonic_container:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    env_file:
-      - ./front/.env
-    stdin_open: true
-    tty: true
-    volumes:
-      - ./:/workspace:rw
-    ports:
-      - '5000:5000'
-      - "5001:5001"
-    networks:
-      - jane_tonic_network
+  # app_jane_tonic_container:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   env_file:
+  #     - ./front/.env
+  #   stdin_open: true
+  #   tty: true
+  #   volumes:
+  #     - ./:/workspace:rw
+  #   ports:
+  #     - '5000:5000'
+  #     - "5001:5001"
+  #   networks:
+  #     - jane_tonic_network
 
   db:
     image: postgres:latest
@@ -24,8 +24,8 @@ services:
       POSTGRES_PASSWORD: Your_password123
     ports:
       - '5432:5432'
-    env_file:
-      - ./back/.env
+    # env_file:
+    #   - ./back/.env
     networks:
       - jane_tonic_network
 

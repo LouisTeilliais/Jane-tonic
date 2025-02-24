@@ -103,7 +103,7 @@ __decorate([
     (0, common_1.Delete)(':sessionId'),
     (0, swagger_1.ApiBearerAuth)(),
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
-    __param(0, (0, common_1.Param)('sessionId', common_1.ParseIntPipe, new common_1.DefaultValuePipe('0'))),
+    __param(0, (0, common_1.Param)('sessionId', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)

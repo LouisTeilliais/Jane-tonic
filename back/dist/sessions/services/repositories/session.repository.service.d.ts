@@ -10,5 +10,5 @@ export default class SessionRepositoryService {
     createSession(sessionData: Pick<SessionEntity, 'place' | 'level' | 'hour' | 'sessionTypeId' | 'date' | 'numberUserMax'>): Promise<SessionEntity>;
     updateSession(sessionId: SessionEntity['sessionId'], sessionData: Pick<SessionEntity, 'place' | 'level' | 'hour' | 'sessionTypeId' | 'date' | 'numberUserMax'>): Promise<SessionEntity>;
     updateSessionMember(sessionId: SessionEntity['sessionId'], sessionData: Pick<SessionEntity, 'numberUserReserved' | 'isFull'>): Promise<SessionEntity>;
-    deleteSession(sessionId: SessionEntity['sessionId']): Promise<SessionEntity>;
+    deleteSession(sessionId: number): Promise<SessionEntity>;
 }

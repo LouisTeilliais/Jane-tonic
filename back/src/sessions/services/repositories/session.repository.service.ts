@@ -26,38 +26,24 @@ export default class SessionRepositoryService {
     }
 
     /**
-     * Get all upcoming sessions
-    */
-    public findIncomingSessions(): Promise<Array<SessionEntity>>{
-        const currentDate = new Date(); // Date actuelle
+     * Get all upcoming sessions, starting from the current date.
+     */
+    public findIncomingSessions(): Promise<Array<SessionEntity>> {
+        const currentDate = new Date(); 
 
-        // Définir le début et la fin de la journée actuelle
         const startOfDay = new Date(currentDate);
-        startOfDay.setHours(0, 0, 0, 0);
-
-        const endOfDay = new Date(currentDate);
-        endOfDay.setHours(23, 59, 59, 999);
+        startOfDay.setHours(0,0,0,0);
 
         return this.prismaService.session.findMany({
             where: {
-                OR: [
-                    {
-                        date: {
-                            gte: startOfDay, 
-                            lte: endOfDay 
-                        }
-                    },
-                    {
-                        date: {
-                            gt: endOfDay 
-                        }
-                    }
-                ]
+                date: {
+                    gte: startOfDay,
+                }
             },
             orderBy: {
                 date: 'asc'
             },
-            include: this.include
+            include: this.include 
         });
     }
 
@@ -155,17 +141,26 @@ export default class SessionRepositoryService {
      * @param sessionId 
      * @returns 
      */
-    public async deleteSession(sessionId: SessionEntity['sessionId']) : Promise<SessionEntity> {
-        const session = await this.findById(sessionId)
+    public async deleteSession(sessionId: number): Promise<SessionEntity> {
+        const session = await this.findById(sessionId);
 
         if (!session) {
-            return null
+            return null;
         }
+
+        await this.prismaService.user.updateMany({
+            where: {
+                sessionId
+            },
+            data: {
+                sessionId: null
+            }
+        });
 
         return this.prismaService.session.delete({
             where: {
                 sessionId
             }
-        })
+        });
     }
 }

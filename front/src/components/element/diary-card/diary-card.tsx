@@ -16,18 +16,18 @@ export default function DiaryCard({ session }: DiaryCardProps): ReactElement {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState(''); // State for error message
 
-  function getDayName(dateString: string): string {
+  function getDayName(dateString: Date): string {
     const date = new Date(dateString);
     const options: Intl.DateTimeFormatOptions = { weekday: 'long' };
     return new Intl.DateTimeFormat('fr-FR', options).format(date);
   }
 
-  function getDayNumber(dateString: string): number {
+  function getDayNumber(dateString: Date): number {
     const date = new Date(dateString);
     return date.getDate();
   }
 
-  function getMonthName(dateString: string) {
+  function getMonthName(dateString: Date) {
     const date = new Date(dateString);
     const options: Intl.DateTimeFormatOptions = { month: 'long' };
     return new Intl.DateTimeFormat('fr-FR', options).format(date);

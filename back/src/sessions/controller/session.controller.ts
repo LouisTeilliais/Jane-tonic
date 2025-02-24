@@ -50,7 +50,7 @@ export class SessionController {
     @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     deleteSession(
-        @Param('sessionId', ParseIntPipe, new DefaultValuePipe('0')) sessionId: number
+        @Param('sessionId', ParseIntPipe) sessionId: number
     ){
         return this.sessionControllerService.deleteSession(sessionId)
     }

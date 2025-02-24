@@ -46,11 +46,11 @@ img {
     }
 
     .navbar-button-container {
-        gap: 1rem; 
+        gap: 1.5rem; 
     }
 
     .link-nav {
-        font-size: 12px; 
+        font-size: 11px; 
         margin-right: 0
     }
 

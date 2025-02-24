@@ -4,7 +4,7 @@ import Card from "../../../components/containers/card/card.component";
 import TextField from "../../../components/inputs/text-field/text-field.component";
 import './index.css';
 import { DatePicker } from "@fluentui/react-datepicker-compat";
-import { getSessionById, upsertSession } from "../../../requests/session";
+import { deleteSession, getSessionById, upsertSession } from "../../../requests/session";
 import { PrimaryButton } from "@fluentui/react";
 import { NEW } from "../../../types/other";
 import { getParams } from "../../../requests/params";
@@ -53,7 +53,6 @@ export default function AdminIndex() {
     const [sessionTypes, setSessionTypes] = useState<{ sessionTypeId: number, sessionType: string }[]>([]);
     const [sessionTypeId, setSessionTypeId] = useState<number | null>(null);
 
-    console.log(isReadOnly)
 
     const handleSelectDate = (date: Date | null | undefined) => {
         setDate(date ?? null);
@@ -79,6 +78,15 @@ export default function AdminIndex() {
             console.error('Failed to upsert session:', error);
         }
     };
+
+    const handleDelete = async (sessionId: string) => {
+        try {
+            await deleteSession(sessionId);
+            navigate('/admin');
+        } catch (error) {
+            console.error('Failed to delete session:', error);
+        }
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -166,11 +174,11 @@ export default function AdminIndex() {
                     <br />
                     <div className="container-button">
                         <PrimaryButton className="submit-button" type="submit">{sessionId === `${NEW}` ? 'Créer session' : 'Modifier la session'}</PrimaryButton>
-                        {/* {
+                        {
                             sessionId !== `${NEW}` && (
-                                <PrimaryButton color="red" className="delete-button" onClick={() => deleteSession(sessionId!)}>Supprimer la session</PrimaryButton>
+                                <PrimaryButton color="red" className="delete-button" onClick={() => handleDelete(sessionId!)}>Supprimer la session</PrimaryButton>
                             )
-                        } */}
+                        }
                     </div>
                 </Card>
                 <br />
