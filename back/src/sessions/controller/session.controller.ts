@@ -3,7 +3,6 @@ import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { SessionControllerService } from "../services";
 import { SessionDto } from "../models/dto/session.dto";
 import { JwtAuthGuard } from "src/authentication/guards/jwt-auth.guard";
-import { Request, Response } from 'express';
 
 @ApiTags('Sessions')
 @Controller('sessions')
@@ -55,16 +54,6 @@ export class SessionController {
     ){
         return this.sessionControllerService.deleteSession(sessionId)
     }
-
-
-    @Options()
-    optionsHandler(@Req() req: Request, @Res() res: Response) {
-        res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-        res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        return res.sendStatus(204);
-}
-
 
 }
 

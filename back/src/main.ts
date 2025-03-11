@@ -11,6 +11,7 @@ async function bootstrap() {
     origin: ['https://janetonic.fr', 'https://api.janetonic.fr'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   });
 
   const config = new DocumentBuilder()
