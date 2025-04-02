@@ -13,6 +13,7 @@ async function bootstrap() {
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   });
+  
 
   const config = new DocumentBuilder()
     .setTitle('Jane Tonic')
@@ -24,6 +25,6 @@ async function bootstrap() {
   const options = new DocumentBuilder().addBearerAuth();
   SwaggerModule.setup('Api', app, document);
 
-  await app.listen(process.env.APP_PORT);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();

@@ -8,8 +8,6 @@ services:
       POSTGRES_DB: jane-tonic-db
     ports:
       - '5432:5432'
-    # env_file:
-    #   - ./back/.env.production  
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
@@ -20,7 +18,7 @@ services:
       args:
         - NODE_ENV=production  
     ports:
-      - "5173:5173"
+      - "5001:80"  # Correction : expose le frontend sur le bon port pour Apache
     env_file:
       - ./front/.env.production  
     restart: always
@@ -29,7 +27,7 @@ services:
     build:
       context: ./back
     ports:
-      - "5001:5001"
+      - "3000:3000"  # Correction : expose le backend sur le bon port
     depends_on:
       - jane-tonic-db
     environment:
