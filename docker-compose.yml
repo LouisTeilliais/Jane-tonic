@@ -3,8 +3,8 @@ services:
   jane-tonic-db:
     image: postgres:13
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Your_password123
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: wra4AJD.deeq
       POSTGRES_DB: jane-tonic-db
     ports:
       - '5432:5432'
@@ -33,7 +33,7 @@ services:
     depends_on:
       - jane-tonic-db
     environment:
-      DATABASE_URL: postgresql://postgres:Your_password123@jane-tonic-db:5432/jane-tonic-db
+      DATABASE_URL: postgres://sa:wra4AJD.deeq@jane-tonic-db:5432/jane-tonic-db
       APP_PORT: 5001
       SECRETKEY: 'b^jY\"gS&2HZG-P@'
       EXPIRESIN: "1h"
