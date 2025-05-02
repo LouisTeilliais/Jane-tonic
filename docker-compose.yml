@@ -20,7 +20,7 @@ services:
     ports:
       - "5173:5173"
     env_file:
-      - ./front/.env
+      - ./front/.env.production
     restart: always
     networks:
       - jane-tonic-network
