@@ -18,7 +18,7 @@
     margin-left: 1rem;
   }
 
-  .button-container{
+  .button-container-login{
     margin-right: 2rem;
     margin-left: 2rem;
   }
@@ -39,6 +39,6 @@ img {
   height: 150px;
 }
 
-.button-container {
+.button-container-login {
   justify-content: center;
 }

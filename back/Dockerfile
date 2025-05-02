@@ -4,12 +4,11 @@ WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
-RUN npx prisma migrate
 
 COPY . .
 
-COPY start.sh /app/
+RUN npx prisma generate
 
 EXPOSE 5001
 
-CMD ["sh", "/app/start.sh"]
+CMD ["sh", "-c", "npx prisma migrate deploy && npm run build && npm run start:prod"]

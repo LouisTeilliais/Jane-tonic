@@ -1,5 +1,5 @@
 import {HttpException, HttpStatus, Injectable, NotFoundException} from '@nestjs/common';
-import {compare} from 'bcrypt'
+import {compare} from 'bcryptjs'
 import { LoginUserDto, UserDto } from '../dto/users.user.dto';
 import { PrismaService } from 'src/prisma.service';
 import UserEntity from 'src/_utils/user.entity';

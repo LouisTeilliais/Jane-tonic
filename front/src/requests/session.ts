@@ -5,6 +5,7 @@ import { BASE_URL, NEW } from "../types/other";
 
 export async function getTopFiveSession() {
     try {
+        console.log(BASE_URL)
         const response = await axios.get(
             `${BASE_URL}sessions/next`,
             {

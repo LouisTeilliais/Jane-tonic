@@ -7,12 +7,14 @@ async function bootstrap() {
 
   // Configurer CORS
   app.setGlobalPrefix('api');
+  
   app.enableCors({
-    origin: '*',
+    origin: 'http://localhost:5173', // Assure-toi que l'URL du frontend est correcte
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    // credentials: true,
+    credentials: true,  // Si tu utilises des cookies ou des tokens
   });
+  
 
   // Middleware pour gérer les requêtes OPTIONS
   app.use((req, res, next) => {
@@ -33,6 +35,7 @@ async function bootstrap() {
   const options = new DocumentBuilder().addBearerAuth();
   SwaggerModule.setup('Api', app, document);
 
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(5001);
+
 }
 bootstrap();
