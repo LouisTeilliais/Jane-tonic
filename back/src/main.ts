@@ -9,7 +9,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   
   app.enableCors({
-    origin: 'http://localhost:5173', // Assure-toi que l'URL du frontend est correcte
+    origin: ['http://localhost:5173', 'https://janetonic.fr'], // Front 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,  // Si tu utilises des cookies ou des tokens
