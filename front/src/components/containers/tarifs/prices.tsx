@@ -71,7 +71,7 @@ export default function Tarifs() {
                                 1 séance SOLO
                             </p>
                             <p className='text-prices'>
-                                50 euros
+                                60 euros
                             </p>
                         </div>
                         <div className='prices-container-black'>
@@ -79,14 +79,7 @@ export default function Tarifs() {
                                 1 séance DUO
                             </p>
                             <p className='text-prices'>
-                                70 euros
-                            </p>
-                        </div>
-                    </div>
-                    <div className='container'>
-                        <div className='container-rules'>
-                            <p>
-                                Les cours particuliers à domicile peuvent être réglés en <b>CESU</b>, vous bénéficierez alors d'une réduction 50% de la totalité du montant sur votre prochaine échéance d'impôts.
+                                80 euros
                             </p>
                         </div>
                     </div>

@@ -5,18 +5,20 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Configurer CORS
   app.setGlobalPrefix('api');
   
   app.enableCors({
-    origin: ['http://localhost:5173', 'https://janetonic.fr'], // Front 
+    origin: [
+    'http://localhost:5173',
+    'https://janetonic.fr',
+    'https://www.janetonic.fr'  
+  ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,  // Si tu utilises des cookies ou des tokens
+    credentials: true,  
   });
   
 
-  // Middleware pour gérer les requêtes OPTIONS
   app.use((req, res, next) => {
     if (req.method === 'OPTIONS') {
       res.status(200).end();
